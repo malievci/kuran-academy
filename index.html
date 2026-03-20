@@ -44,7 +44,7 @@
     .ol{flex:1;max-width:70px;height:1px;background:linear-gradient(90deg,transparent,#c8a84b)}
     .ol.r{background:linear-gradient(90deg,#c8a84b,transparent)}
     .bismi{font-family:'Amiri',serif;font-size:32px;color:#c8a84b;direction:rtl;text-align:center;margin-bottom:32px;text-shadow:0 2px 14px rgba(200,168,75,.22);animation:fadeUp .7s .1s ease both}
-    .vc{background:linear-gradient(135deg,#0c1f16,#0e2318);border:1px solid #1a3828;border-radius:12px;padding:24px;margin-bottom:16px;animation:fadeUp .4s ease both;transition:border-color .2s,box-shadow .2s;scroll-margin-top:80px}
+    .vc{background:linear-gradient(135deg,#0c1f16,#0e2318);border:1px solid #1a3828;border-radius:12px;padding:24px;margin-bottom:16px;animation:fadeUp .4s ease both;transition:border-color .2s,box-shadow .2s;scroll-margin-top:72px}
     .vc:hover{border-color:#244d34;box-shadow:0 3px 22px rgba(0,0,0,.3)}
     .vtop{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px}
     .vnum{width:34px;height:34px;border:1px solid #c8a84b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:11px;color:#c8a84b;flex-shrink:0;background:rgba(200,168,75,.05)}
@@ -158,28 +158,37 @@
     body.hide-wmn  .wmn{display:none!important}
     body.hide-wmn  .wc{min-height:40px;padding-bottom:4px}
     /* Toggle switches in font popup */
-    .fsp-divider{height:1px;background:#1a3020;margin:12px 0}
-    .fsp-toggle-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-    .fsp-toggle-row:last-child{margin-bottom:0}
-    .fsp-toggle-name{font-size:12px;color:#6aaa7a}
+    /* Toggle switch */
     .toggle-sw{position:relative;width:38px;height:22px;flex-shrink:0}
     .toggle-sw input{opacity:0;width:0;height:0;position:absolute}
     .toggle-track{position:absolute;inset:0;background:#1a3020;border-radius:11px;cursor:pointer;transition:background .2s;border:1px solid #2a5a38}
     .toggle-track::after{content:'';position:absolute;width:16px;height:16px;left:2px;top:2px;background:#3a6a48;border-radius:50%;transition:transform .2s,background .2s}
     .toggle-sw input:checked + .toggle-track{background:rgba(200,168,75,.15);border-color:#c8a84b}
     .toggle-sw input:checked + .toggle-track::after{transform:translateX(16px);background:#c8a84b}
+    /* Font button */
     .font-btn{background:transparent;border:1px solid #2a5a38;border-radius:8px;color:#7aad8a;padding:9px 12px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:5px;white-space:nowrap;flex-shrink:0}
     .font-btn:hover{border-color:#c8a84b;color:#c8a84b}
-    .font-size-popup{position:absolute;top:calc(100% + 8px);right:0;background:#0c1f16;border:1px solid #2a5a38;border-radius:10px;padding:16px 18px;z-index:200;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.5);animation:fadeUp .18s ease both}
-    .font-size-popup.hidden{display:none!important}
-    .fsp-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#3a6a48;text-transform:uppercase;margin-bottom:10px}
-    .fsp-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-    .fsp-row:last-child{margin-bottom:0}
-    .fsp-name{font-size:12px;color:#6aaa7a;width:56px;flex-shrink:0}
-    .fsp-dec,.fsp-inc{width:28px;height:28px;background:transparent;border:1px solid #2a5a38;border-radius:6px;color:#c8a84b;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;line-height:1}
-    .fsp-dec:hover,.fsp-inc:hover{border-color:#c8a84b;background:rgba(200,168,75,.1)}
-    .fsp-val{font-family:'Cinzel',serif;font-size:12px;color:#e8d8b0;min-width:32px;text-align:center}
     .font-wrap{position:relative;flex-shrink:0}
+    /* Font popup — fixed centered modal, fits any screen */
+    .font-popup-overlay{position:fixed;inset:0;z-index:499;background:rgba(0,0,0,.5);display:none}
+    .font-popup-overlay.show{display:block}
+    .font-size-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#0c1f16;border:1px solid #2a5a38;border-radius:12px;padding:20px 22px;z-index:500;width:min(310px,92vw);box-shadow:0 12px 48px rgba(0,0,0,.7);max-height:88vh;overflow-y:auto}
+    .font-size-popup.hidden{display:none!important}
+    .fsp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .fsp-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#c8a84b;text-transform:uppercase}
+    .fsp-x{background:transparent;border:none;color:#4a7a58;font-size:20px;cursor:pointer;line-height:1;padding:0 4px;transition:color .15s}
+    .fsp-x:hover{color:#c8a84b}
+    .fsp-divider{height:1px;background:#1a3020;margin:14px 0}
+    .fsp-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#3a6a48;text-transform:uppercase;margin-bottom:12px}
+    .fsp-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .fsp-row:last-child{margin-bottom:0}
+    .fsp-name{font-size:13px;color:#6aaa7a;width:80px;flex-shrink:0}
+    .fsp-dec,.fsp-inc{width:38px;height:38px;background:transparent;border:1px solid #2a5a38;border-radius:8px;color:#c8a84b;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;line-height:1}
+    .fsp-dec:hover,.fsp-inc:hover{border-color:#c8a84b;background:rgba(200,168,75,.1)}
+    .fsp-val{font-family:'Cinzel',serif;font-size:14px;color:#e8d8b0;min-width:36px;text-align:center}
+    .fsp-toggle-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .fsp-toggle-row:last-child{margin-bottom:0}
+    .fsp-toggle-name{font-size:13px;color:#6aaa7a}
 
     /* ── Bookmark ── */
     .bm-btn{background:transparent;border:none;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#3a6a48;font-size:18px;transition:all .18s;padding:0;flex-shrink:0;border-radius:6px;margin-left:auto}
@@ -276,36 +285,42 @@
     <button class="search-btn" id="searchBtn">🔍 Ara</button>
     <div class="font-wrap" id="fontWrap">
       <button class="font-btn" id="fontBtn">Aa</button>
-      <div class="font-size-popup hidden" id="fontPopup">
-        <div class="fsp-label">Yazı Boyutu</div>
-        <div class="fsp-row">
-          <span class="fsp-name">Arapça</span>
-          <button class="fsp-dec" id="arDec">−</button>
-          <span class="fsp-val" id="arVal">24</span>
-          <button class="fsp-inc" id="arInc">+</button>
-        </div>
-        <div class="fsp-row">
-          <span class="fsp-name">Meal</span>
-          <button class="fsp-dec" id="trDec">−</button>
-          <span class="fsp-val" id="trVal">14</span>
-          <button class="fsp-inc" id="trInc">+</button>
-        </div>
-        <div class="fsp-divider"></div>
-        <div class="fsp-label">Göster / Gizle</div>
-        <div class="fsp-toggle-row">
-          <span class="fsp-toggle-name">Türkçe Meal</span>
-          <label class="toggle-sw">
-            <input type="checkbox" id="toggleMeal" checked/>
-            <span class="toggle-track"></span>
-          </label>
-        </div>
-        <div class="fsp-toggle-row">
-          <span class="fsp-toggle-name">Kelime Anlamları</span>
-          <label class="toggle-sw">
-            <input type="checkbox" id="toggleWmn" checked/>
-            <span class="toggle-track"></span>
-          </label>
-        </div>
+    </div>
+    <!-- Font popup overlay + modal (outside fontWrap, fixed positioned) -->
+    <div class="font-popup-overlay" id="fontOverlay"></div>
+    <div class="font-size-popup hidden" id="fontPopup">
+      <div class="fsp-header">
+        <span class="fsp-title">Görünüm</span>
+        <button class="fsp-x" id="fontPopupClose">×</button>
+      </div>
+      <div class="fsp-label">Yazı Boyutu</div>
+      <div class="fsp-row">
+        <span class="fsp-name">Arapça</span>
+        <button class="fsp-dec" id="arDec">−</button>
+        <span class="fsp-val" id="arVal">24</span>
+        <button class="fsp-inc" id="arInc">+</button>
+      </div>
+      <div class="fsp-row">
+        <span class="fsp-name">Meal</span>
+        <button class="fsp-dec" id="trDec">−</button>
+        <span class="fsp-val" id="trVal">14</span>
+        <button class="fsp-inc" id="trInc">+</button>
+      </div>
+      <div class="fsp-divider"></div>
+      <div class="fsp-label">Göster / Gizle</div>
+      <div class="fsp-toggle-row">
+        <span class="fsp-toggle-name">Türkçe Meal</span>
+        <label class="toggle-sw">
+          <input type="checkbox" id="toggleMeal" checked/>
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+      <div class="fsp-toggle-row">
+        <span class="fsp-toggle-name">Kelime Anlamları</span>
+        <label class="toggle-sw">
+          <input type="checkbox" id="toggleWmn" checked/>
+          <span class="toggle-track"></span>
+        </label>
       </div>
     </div>
     <button class="bm-btn-hdr" id="bmOpenBtn">🔖 Yer İmleri</button>
@@ -827,32 +842,50 @@ async function navTo(vk) {
 
   closeSb();
   closeSearch();
+  pauseInfiniteScroll();
 
-  // 1. Farklı sure ise yükle ve verses dolana kadar bekle
-  if (curCh !== chId) {
-    $('chSel').value = chId;
-    curCh = chId; curPg = 1; verses = []; hintOff = true;
-    $('vCon').innerHTML = '';
-    renderChHdr(chId);
-    await fetchSurah(chId);
-    // verses array'inin dolmasını bekle (max 3 sn)
-    for (let i = 0; i < 20 && verses.length === 0; i++) {
-      await new Promise(r => setTimeout(r, 150));
+  try {
+    // 1. Farklı sure ise yükle
+    if (curCh !== chId) {
+      $('chSel').value = chId;
+      curCh = chId; curPg = 1; verses = []; hintOff = true;
+      $('vCon').innerHTML = '';
+      renderChHdr(chId);
+      await fetchSurah(chId);
+      for (let i = 0; i < 20 && verses.length === 0; i++) {
+        await new Promise(r => setTimeout(r, 150));
+      }
     }
-  }
 
-  // 2. DOM temizle, hedef sayfaya kadar tüm ayetleri render et
-  $('vCon').innerHTML = '';
-  curPg = 0;
-  const targetPg = Math.ceil(vNum / PER);
-  for (let p = 1; p <= targetPg; p++) {
-    showPg(p, p > 1);
-  }
+    // 2. TÜM suredeki ayetleri render et (sayfalama yok)
+    //    Böylece observer sonradan showPg çağırıp DOM/scroll'u bozmaz
+    const wby = wbyCache[curCh] || {};
+    $('vCon').innerHTML = '';
+    $('chHdr').style.display = '';
+    curPg = Math.ceil(verses.length / PER); // son sayfa = tümü yüklü
 
-  // 3. Tarayıcıya layout için 2 frame ver, sonra scroll et
-  await new Promise(r => requestAnimationFrame(r));
-  await new Promise(r => requestAnimationFrame(r));
-  await scrollToVerse(vk);
+    verses.forEach((v, vi) => {
+      const d = document.createElement('div');
+      // Animasyonu kapat — layout kaymasını önle
+      const html = renderV(v, vi, wby).replace('animation-delay', 'data-delay');
+      d.innerHTML = html;
+      const card = d.firstElementChild;
+      if (card) card.style.animation = 'none';
+      $('vCon').appendChild(card);
+    });
+    attachL();
+
+    // 3. Layout için bekle
+    await new Promise(r => setTimeout(r, 80));
+
+    // 4. Scroll
+    await scrollToVerse(vk);
+
+  } catch(e) {
+    console.error('navTo error:', e);
+  }
+  // Observer'ı 4 saniye sonra aç — highlight biter, layout oturur
+  setTimeout(() => resumeInfiniteScroll(), 4000);
 }
 
 function findVerseEl(vk) {
@@ -863,35 +896,44 @@ function findVerseEl(vk) {
   return null;
 }
 
+function getAbsTop(el) {
+  // Scroll pozisyonundan bağımsız mutlak offsetTop hesabı
+  let top = 0;
+  while (el) {
+    top += el.offsetTop || 0;
+    el = el.offsetParent;
+  }
+  return top;
+}
+
 async function scrollToVerse(vk) {
-  // Ayet DOM'da görünene kadar bekle (max ~1.5 sn)
+  // Ayeti bul
   let el = null;
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 15; i++) {
     el = findVerseEl(vk);
     if (el) break;
-    await new Promise(r => setTimeout(r, 120));
+    await new Promise(r => setTimeout(r, 100));
   }
+  if (!el) return;
 
-  if (!el) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    return;
-  }
-
-  // Önce vurgula
+  // Vurgula
   document.querySelectorAll('.vc.nav-hl').forEach(e => e.classList.remove('nav-hl'));
   el.classList.add('nav-hl');
 
-  // Layout oturması için bir frame bekle
-  await new Promise(r => requestAnimationFrame(r));
-  await new Promise(r => requestAnimationFrame(r));
-
-  // Header yüksekliği kadar boşluk bırakarak scroll et
+  // offsetTop zinciri ile mutlak pozisyonu hesapla
   const hh = document.querySelector('.hdr')?.offsetHeight || 60;
-  const rect = el.getBoundingClientRect();
-  const target = rect.top + window.scrollY - hh - 12;
-  window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+  const absTop = getAbsTop(el);
+  const target = Math.max(0, absTop - hh - 12);
 
-  setTimeout(() => el && el.classList.remove('nav-hl'), 3000);
+  // Scroll — behavior:instant tarayıcı desteği için try/catch
+  try {
+    window.scrollTo({ top: target, behavior: 'instant' });
+  } catch(e) {
+    window.scrollTo(0, target);
+  }
+
+  // 3 sn sonra vurguyu kaldır — ama DOM/scroll'a dokunma
+  setTimeout(() => { if (el) el.classList.remove('nav-hl'); }, 3000);
 }
 
 /* ══ SEARCH ══════════════════════════════════════════════════ */
@@ -1174,10 +1216,20 @@ function applyFontSizes() {
 
 $('fontBtn').addEventListener('click', e => {
   e.stopPropagation();
-  $('fontPopup').classList.toggle('hidden');
+  const popup = $('fontPopup');
+  const overlay = $('fontOverlay');
+  const isHidden = popup.classList.contains('hidden');
+  popup.classList.toggle('hidden', !isHidden);
+  overlay.classList.toggle('show', !isHidden);
 });
+$('fontPopupClose').addEventListener('click', closeFontPopup);
+$('fontOverlay').addEventListener('click', closeFontPopup);
+function closeFontPopup() {
+  $('fontPopup').classList.add('hidden');
+  $('fontOverlay').classList.remove('show');
+}
 document.addEventListener('click', e => {
-  if (!$('fontWrap').contains(e.target)) $('fontPopup').classList.add('hidden');
+  if (!$('fontWrap').contains(e.target) && !$('fontPopup').contains(e.target)) closeFontPopup();
 });
 $('arDec').addEventListener('click', () => { if(fontSz.ar>FONT_LIMITS.ar[0]){fontSz.ar-=2;applyFontSizes();} });
 $('arInc').addEventListener('click', () => { if(fontSz.ar<FONT_LIMITS.ar[1]){fontSz.ar+=2;applyFontSizes();} });
@@ -1558,22 +1610,31 @@ function showToast(msg) {
 })();
 
 /* ══ INFINITE SCROLL ═════════════════════════════════════════ */
+let _scrollObserver = null;
+
+function pauseInfiniteScroll() {
+  if (_scrollObserver) _scrollObserver.disconnect();
+}
+function resumeInfiniteScroll() {
+  const sentinel = document.getElementById('scrollSentinel');
+  if (_scrollObserver && sentinel) _scrollObserver.observe(sentinel);
+}
+
 (function initInfiniteScroll() {
-  // Sentinel element — vCon'un sonuna eklenir, görününce sonraki sayfa yüklenir
   const sentinel = document.createElement('div');
   sentinel.id = 'scrollSentinel';
   sentinel.style.cssText = 'height:1px;margin-top:8px';
   $('main').appendChild(sentinel);
 
-  const observer = new IntersectionObserver(entries => {
+  _scrollObserver = new IntersectionObserver(entries => {
     if (!entries[0].isIntersecting) return;
     const totPg = Math.ceil(verses.length / PER);
     if (curPg < totPg) {
       showPg(curPg + 1, true);
     }
-  }, { rootMargin: '200px' });
+  }, { rootMargin: '50px' });
 
-  observer.observe(sentinel);
+  _scrollObserver.observe(sentinel);
 })();
 
 /* ══ HELPERS ═════════════════════════════════════════════════ */
