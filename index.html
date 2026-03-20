@@ -44,7 +44,7 @@
     .ol{flex:1;max-width:70px;height:1px;background:linear-gradient(90deg,transparent,#c8a84b)}
     .ol.r{background:linear-gradient(90deg,#c8a84b,transparent)}
     .bismi{font-family:'Amiri',serif;font-size:32px;color:#c8a84b;direction:rtl;text-align:center;margin-bottom:32px;text-shadow:0 2px 14px rgba(200,168,75,.22);animation:fadeUp .7s .1s ease both}
-    .vc{background:linear-gradient(135deg,#0c1f16,#0e2318);border:1px solid #1a3828;border-radius:12px;padding:24px;margin-bottom:16px;animation:fadeUp .4s ease both;transition:border-color .2s,box-shadow .2s}
+    .vc{background:linear-gradient(135deg,#0c1f16,#0e2318);border:1px solid #1a3828;border-radius:12px;padding:24px;margin-bottom:16px;animation:fadeUp .4s ease both;transition:border-color .2s,box-shadow .2s;scroll-margin-top:80px}
     .vc:hover{border-color:#244d34;box-shadow:0 3px 22px rgba(0,0,0,.3)}
     .vtop{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px}
     .vnum{width:34px;height:34px;border:1px solid #c8a84b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:11px;color:#c8a84b;flex-shrink:0;background:rgba(200,168,75,.05)}
@@ -52,10 +52,11 @@
     .wc{display:flex;flex-direction:column;align-items:center;padding:4px 8px 6px;border-radius:6px;cursor:pointer;border:1px solid transparent;transition:all .16s;min-width:40px;min-height:52px}
     .wc:hover{background:rgba(200,168,75,.09);border-color:rgba(200,168,75,.28);transform:translateY(-2px)}
     .wc.sel{background:rgba(200,168,75,.16);border-color:#c8a84b;box-shadow:0 0 12px rgba(200,168,75,.2)}
-    .war{font-family:'Amiri',serif;font-size:24px;color:#f0e0b0;line-height:1.4;direction:rtl}
+    :root{--war-size:24px;--vp-size:26px;--vt-size:14.5px;--oaw-size:19px}
+    .war{font-family:'Amiri',serif;font-size:var(--war-size);color:#f0e0b0;line-height:1.4;direction:rtl}
     .wmn{font-size:10px;color:#6aaa7a;margin-top:2px;text-align:center;max-width:76px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    .vp{font-family:'Amiri',serif;font-size:26px;color:#f0e0b0;direction:rtl;text-align:right;line-height:2;flex:1}
-    .vt{margin-top:16px;padding-top:12px;border-top:1px solid #162e1e;font-size:14.5px;line-height:1.85;color:#a8c4b0;font-style:italic;font-weight:300}
+    .vp{font-family:'Amiri',serif;font-size:var(--vp-size);color:#f0e0b0;direction:rtl;text-align:right;line-height:2;flex:1}
+    .vt{margin-top:16px;padding-top:12px;border-top:1px solid #162e1e;font-size:var(--vt-size);line-height:1.85;color:#a8c4b0;font-style:italic;font-weight:300}
     .vtl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#3a6a48;margin-bottom:5px;font-style:normal}
     .mw{cursor:pointer;border-radius:3px;padding:0 1px;transition:background .14s}
     .mw:hover{background:rgba(106,170,122,.18);color:#c8e8d0}
@@ -92,11 +93,11 @@
     .oref-arr{font-size:9px;opacity:.6}
     .oref::after{content:'';flex:1;height:1px;background:#1a3020}
     .oar{display:block;direction:rtl;text-align:right;line-height:2.1;word-break:break-word;margin-bottom:12px}
-    .oaw{font-family:'Amiri',serif;font-size:19px;color:#c8b880;display:inline;padding:1px 2px;border-radius:3px}
+    .oaw{font-family:'Amiri',serif;font-size:var(--oaw-size);color:#c8b880;display:inline;padding:1px 2px;border-radius:3px}
     .oaw.hit{color:#f5d76e;background:rgba(200,168,75,.17);padding:1px 5px;animation:glow 2s ease-in-out infinite}
     .otr{border-top:1px solid #1a3020;padding-top:9px}
     .otr-l{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#3a6a48;margin-bottom:5px;font-family:'Cinzel',serif}
-    .otr-t{font-size:13.5px;color:#8ab09a;line-height:1.75;font-style:italic}
+    .otr-t{font-size:var(--vt-size);color:#8ab09a;line-height:1.75;font-style:italic}
     .otr-ld{color:#2a5a38;font-size:12px}
     .tr-m{color:#a8e8b8;background:rgba(106,170,122,.18);border-radius:3px;padding:0 3px;font-weight:600;font-style:normal}
     .bn{font-size:11px;color:#3a6a48;font-style:italic;border:1px dashed #1a3828;border-radius:6px;padding:9px 12px;margin-bottom:12px;line-height:1.6}
@@ -110,6 +111,140 @@
     .err-code{font-size:11px;color:#2a5a38;background:#0a1a0f;border-radius:6px;padding:10px 14px;margin-bottom:14px;text-align:left;font-family:monospace;line-height:1.6}
     .err-btn{background:transparent;border:1px solid #c8a84b;border-radius:6px;color:#c8a84b;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;padding:9px 22px;cursor:pointer;text-transform:uppercase}
     .hidden{display:none!important}
+
+    /* ── Search button in header ── */
+    .search-btn{background:transparent;border:1px solid #2a5a38;border-radius:8px;color:#7aad8a;padding:9px 16px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
+    .search-btn:hover{border-color:#c8a84b;color:#c8a84b}
+    .search-btn.active{border-color:#c8a84b;color:#c8a84b;background:rgba(200,168,75,.08)}
+
+    /* ── Search panel overlay ── */
+    .srch-panel{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(5,14,11,.96);z-index:300;display:flex;flex-direction:column;transform:translateY(-100%);transition:transform .3s ease}
+    .srch-panel.open{transform:translateY(0)}
+    .srch-top{padding:max(18px,env(safe-area-inset-top)) 20px 16px;background:#060f0c;border-bottom:1px solid #1a3828;flex-shrink:0}
+    .srch-top-row{display:flex;align-items:center;gap:12px;max-width:800px;margin:0 auto}
+    .srch-close{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid #2a5a38;border-radius:50%;background:transparent;color:#7aad8a;cursor:pointer;font-size:16px;transition:all .16s;flex-shrink:0;line-height:1}
+    .srch-close:hover{border-color:#c8a84b;color:#c8a84b}
+    .srch-tabs{display:flex;gap:8px;max-width:800px;margin:12px auto 0}
+    .srch-tab{background:transparent;border:1px solid #1a3828;border-radius:20px;color:#4a7a58;font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;padding:6px 16px;cursor:pointer;text-transform:uppercase;transition:all .18s}
+    .srch-tab.active{border-color:#c8a84b;color:#c8a84b;background:rgba(200,168,75,.08)}
+    .srch-input-wrap{flex:1;position:relative}
+    .srch-input{width:100%;background:#0c1f16;border:1px solid #2a5a38;border-radius:8px;color:#e8d8b0;padding:11px 42px 11px 16px;font-family:'Cormorant Garamond',serif;font-size:18px;outline:none;transition:border-color .2s}
+    .srch-input:focus{border-color:#c8a84b}
+    .srch-input::placeholder{color:#2a5a38;font-style:italic}
+    .srch-input.ar{direction:rtl;font-family:'Amiri',serif;font-size:22px}
+    .srch-clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:#3a6a48;cursor:pointer;font-size:18px;padding:4px;line-height:1;transition:color .15s}
+    .srch-clear:hover{color:#c8a84b}
+    .srch-body{flex:1;overflow-y:auto;padding:0 20px 32px;padding-bottom:max(32px,env(safe-area-inset-bottom))}
+    .srch-inner{max-width:800px;margin:0 auto;padding-top:20px}
+    .srch-status{text-align:center;font-size:12px;color:#3a6a48;letter-spacing:1px;margin-bottom:16px;font-family:'Cinzel',serif}
+    .srch-hint{text-align:center;padding:40px 20px;color:#2a5a38;font-style:italic;font-size:14px;line-height:1.8}
+    .srch-hint b{color:#3a6a48;font-weight:400;display:block;margin-bottom:8px}
+
+    /* Search result cards */
+    .sr-card{background:linear-gradient(135deg,#0c1f16,#0e2318);border:1px solid #1a3828;border-radius:10px;padding:16px 18px;margin-bottom:12px;cursor:pointer;transition:border-color .18s,box-shadow .18s}
+    .sr-card:hover{border-color:#2a5a38;box-shadow:0 3px 20px rgba(0,0,0,.3)}
+    .sr-ref{font-family:'Cinzel',serif;font-size:9px;color:#c8a84b;letter-spacing:2px;margin-bottom:9px;display:flex;align-items:center;gap:8px}
+    .sr-ref::after{content:'';flex:1;height:1px;background:#1a3020}
+    .sr-ar{font-family:'Amiri',serif;font-size:var(--war-size);color:#e8d8b0;direction:rtl;text-align:right;line-height:1.9;margin-bottom:10px;word-break:break-word}
+    .sr-tr{font-size:var(--vt-size);color:#8ab09a;line-height:1.7;font-style:italic;border-top:1px solid #1a3020;padding-top:9px}
+    .sr-hl{background:rgba(200,168,75,.22);color:#f5d76e;border-radius:3px;padding:0 3px}
+    .sr-tr-hl{background:rgba(106,170,122,.2);color:#a8e8b8;border-radius:3px;padding:0 3px;font-style:normal;font-weight:600}
+    .load-more-srch{display:block;width:100%;max-width:800px;margin:8px auto 0;padding:12px 0;background:transparent;border:1px solid #2a5a38;border-radius:8px;color:#6aaa7a;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase;transition:all .2s}
+    .load-more-srch:hover{border-color:#c8a84b;color:#c8a84b}
+    .load-more-srch:disabled{opacity:.4;cursor:not-allowed}
+
+    /* ── Display toggles ── */
+    body.hide-meal .vt{display:none!important}
+    body.hide-wmn  .wmn{display:none!important}
+    body.hide-wmn  .wc{min-height:40px;padding-bottom:4px}
+    /* Toggle switches in font popup */
+    .fsp-divider{height:1px;background:#1a3020;margin:12px 0}
+    .fsp-toggle-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .fsp-toggle-row:last-child{margin-bottom:0}
+    .fsp-toggle-name{font-size:12px;color:#6aaa7a}
+    .toggle-sw{position:relative;width:38px;height:22px;flex-shrink:0}
+    .toggle-sw input{opacity:0;width:0;height:0;position:absolute}
+    .toggle-track{position:absolute;inset:0;background:#1a3020;border-radius:11px;cursor:pointer;transition:background .2s;border:1px solid #2a5a38}
+    .toggle-track::after{content:'';position:absolute;width:16px;height:16px;left:2px;top:2px;background:#3a6a48;border-radius:50%;transition:transform .2s,background .2s}
+    .toggle-sw input:checked + .toggle-track{background:rgba(200,168,75,.15);border-color:#c8a84b}
+    .toggle-sw input:checked + .toggle-track::after{transform:translateX(16px);background:#c8a84b}
+    .font-btn{background:transparent;border:1px solid #2a5a38;border-radius:8px;color:#7aad8a;padding:9px 12px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:5px;white-space:nowrap;flex-shrink:0}
+    .font-btn:hover{border-color:#c8a84b;color:#c8a84b}
+    .font-size-popup{position:absolute;top:calc(100% + 8px);right:0;background:#0c1f16;border:1px solid #2a5a38;border-radius:10px;padding:16px 18px;z-index:200;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.5);animation:fadeUp .18s ease both}
+    .font-size-popup.hidden{display:none!important}
+    .fsp-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#3a6a48;text-transform:uppercase;margin-bottom:10px}
+    .fsp-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .fsp-row:last-child{margin-bottom:0}
+    .fsp-name{font-size:12px;color:#6aaa7a;width:56px;flex-shrink:0}
+    .fsp-dec,.fsp-inc{width:28px;height:28px;background:transparent;border:1px solid #2a5a38;border-radius:6px;color:#c8a84b;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;line-height:1}
+    .fsp-dec:hover,.fsp-inc:hover{border-color:#c8a84b;background:rgba(200,168,75,.1)}
+    .fsp-val{font-family:'Cinzel',serif;font-size:12px;color:#e8d8b0;min-width:32px;text-align:center}
+    .font-wrap{position:relative;flex-shrink:0}
+
+    /* ── Bookmark ── */
+    .bm-btn{background:transparent;border:none;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#3a6a48;font-size:18px;transition:all .18s;padding:0;flex-shrink:0;border-radius:6px;margin-left:auto}
+    .bm-btn:hover{color:#c8a84b}
+    .bm-btn.marked{color:#c8a84b}
+    .bm-panel{position:fixed;left:0;top:0;bottom:0;width:320px;background:linear-gradient(180deg,#060f0c,#081510);border-right:1px solid #1a3828;z-index:200;transform:translateX(-100%);transition:transform .28s ease;overflow-y:auto;box-shadow:4px 0 30px rgba(0,0,0,.5)}
+    .bm-panel.open{transform:translateX(0)}
+    .bm-top{padding:max(18px,env(safe-area-inset-top)) 18px 14px;position:sticky;top:0;background:#060f0c;border-bottom:1px solid #1a3828;z-index:2}
+    .bm-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#c8a84b;text-transform:uppercase;margin-bottom:0}
+    .bm-close{position:absolute;top:14px;right:14px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid #2a5a38;border-radius:50%;background:transparent;color:#7aad8a;cursor:pointer;font-size:15px;transition:all .16s;line-height:1}
+    .bm-close:hover{border-color:#c8a84b;color:#c8a84b}
+    .bm-body{padding:16px 18px 32px;padding-bottom:max(32px,env(safe-area-inset-bottom))}
+    .bm-empty{text-align:center;padding:40px 16px;color:#2a5a38;font-style:italic;font-size:13px;line-height:1.7}
+    .bm-empty b{color:#3a6a48;font-weight:400;display:block;margin-bottom:6px}
+    .bm-item{background:#0c1f16;border:1px solid #1a3020;border-radius:8px;padding:12px 14px;margin-bottom:10px;cursor:pointer;transition:border-color .18s;display:flex;align-items:flex-start;gap:10px}
+    .bm-item:hover{border-color:#2a5a38}
+    .bm-item-info{flex:1;min-width:0}
+    .bm-item-ref{font-family:'Cinzel',serif;font-size:10px;color:#c8a84b;letter-spacing:2px;margin-bottom:5px}
+    .bm-item-ar{font-family:'Amiri',serif;font-size:17px;color:#d0c090;direction:rtl;text-align:right;line-height:1.7;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+    .bm-item-del{background:transparent;border:none;color:#2a5a38;font-size:18px;cursor:pointer;padding:2px 4px;transition:color .15s;flex-shrink:0;line-height:1;margin-top:1px}
+    .bm-item-del:hover{color:#e06060}
+    .bm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:199;opacity:0;pointer-events:none;transition:opacity .28s}
+    .bm-overlay.show{opacity:1;pointer-events:auto}
+    .bm-btn-hdr{background:transparent;border:1px solid #2a5a38;border-radius:8px;color:#7aad8a;padding:9px 14px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
+    .bm-btn-hdr:hover{border-color:#c8a84b;color:#c8a84b}
+
+    /* ── Stats panel ── */
+    .stats-panel{position:fixed;left:0;top:0;bottom:0;width:340px;background:linear-gradient(180deg,#060f0c,#081510);border-right:1px solid #1a3828;z-index:200;transform:translateX(-100%);transition:transform .28s ease;overflow-y:auto;box-shadow:4px 0 30px rgba(0,0,0,.5)}
+    .stats-panel.open{transform:translateX(0)}
+    .stats-top{padding:max(18px,env(safe-area-inset-top)) 18px 14px;position:sticky;top:0;background:#060f0c;border-bottom:1px solid #1a3828;z-index:2}
+    .stats-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#c8a84b;text-transform:uppercase}
+    .stats-close{position:absolute;top:14px;right:14px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid #2a5a38;border-radius:50%;background:transparent;color:#7aad8a;cursor:pointer;font-size:15px;transition:all .16s;line-height:1}
+    .stats-close:hover{border-color:#c8a84b;color:#c8a84b}
+    .stats-body{padding:16px 18px 32px;padding-bottom:max(32px,env(safe-area-inset-bottom))}
+    .stats-section{margin-bottom:22px}
+    .stats-sec-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:#3a6a48;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .stats-sec-title::after{content:'';flex:1;height:1px;background:#1a3020}
+    .stats-num{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+    .stats-val{font-family:'Cinzel',serif;font-size:32px;color:#c8a84b;line-height:1}
+    .stats-lbl{font-size:12px;color:#4a7a58}
+    .stats-word-item{display:flex;align-items:center;gap:10px;padding:8px 12px;background:#0c1f16;border:1px solid #1a3020;border-radius:8px;margin-bottom:8px;cursor:pointer;transition:border-color .16s}
+    .stats-word-item:hover{border-color:#2a5a38}
+    .stats-word-ar{font-family:'Amiri',serif;font-size:22px;color:#f0e0b0;direction:rtl;flex:1}
+    .stats-word-mn{font-size:11px;color:#4a7a58;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .stats-word-cnt{font-family:'Cinzel',serif;font-size:11px;color:#c8a84b;background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.2);border-radius:10px;padding:2px 8px;flex-shrink:0}
+    .stats-bar-wrap{margin-bottom:10px}
+    .stats-bar-label{display:flex;justify-content:space-between;font-size:11px;color:#4a7a58;margin-bottom:4px}
+    .stats-bar{height:4px;background:#1a3020;border-radius:2px;overflow:hidden}
+    .stats-bar-fill{height:100%;background:linear-gradient(90deg,#2a5a38,#c8a84b);border-radius:2px;transition:width .4s ease}
+    .stats-empty{text-align:center;padding:30px 14px;color:#2a5a38;font-style:italic;font-size:13px;line-height:1.7}
+    .stats-clear-btn{width:100%;background:transparent;border:1px solid #2a5a38;border-radius:6px;color:#4a7a58;font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;padding:8px;cursor:pointer;text-transform:uppercase;transition:all .18s;margin-top:8px}
+    .stats-clear-btn:hover{border-color:#e06060;color:#e06060}
+
+    /* ── Root search panel (inside search panel as 3rd tab) ── */
+    .root-input{width:100%;background:#0c1f16;border:1px solid #2a5a38;border-radius:8px;color:#e8d8b0;padding:11px 16px;font-family:'Amiri',serif;font-size:26px;outline:none;direction:rtl;text-align:right;transition:border-color .2s;margin-bottom:8px}
+    .root-input:focus{border-color:#c8a84b}
+    .root-input::placeholder{color:#2a5a38;font-style:normal;font-size:20px}
+    .root-hint{font-size:12px;color:#3a6a48;text-align:center;line-height:1.6;margin-bottom:14px}
+    .root-letters{display:flex;justify-content:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+    .root-letter-count{font-family:'Cinzel',serif;font-size:10px;padding:4px 10px;border-radius:12px;border:1px solid #1a3020;color:#3a6a48}
+    .root-letter-count.ok{border-color:#2a5a38;color:#6aaa7a;background:rgba(106,170,122,.08)}
+    .root-letter-count.bad{border-color:#5a2a2a;color:#a06060}
+    .root-search-btn{width:100%;background:transparent;border:1px solid #c8a84b;border-radius:8px;color:#c8a84b;font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;padding:11px;cursor:pointer;text-transform:uppercase;transition:all .2s;margin-bottom:16px}
+    .root-search-btn:hover{background:rgba(200,168,75,.09)}
+    .root-search-btn:disabled{opacity:.35;cursor:not-allowed}
     @media(max-width:760px){
       .sbp{width:100%;top:0;height:100vh;z-index:200}
       .sbt{padding-top:max(18px,env(safe-area-inset-top))}
@@ -121,8 +256,6 @@
       .swar{font-size:40px}
       .vc{padding:16px 13px}
       .wc{min-width:38px;min-height:52px}
-      .war{font-size:21px}
-      .vp{font-size:23px}
       .sb-back{display:flex!important}
       .btn-more{padding:14px 32px}
     }
@@ -140,9 +273,101 @@
       <select class="cs" id="chSel"></select>
       <span class="sa">▼</span>
     </div>
+    <button class="search-btn" id="searchBtn">🔍 Ara</button>
+    <div class="font-wrap" id="fontWrap">
+      <button class="font-btn" id="fontBtn">Aa</button>
+      <div class="font-size-popup hidden" id="fontPopup">
+        <div class="fsp-label">Yazı Boyutu</div>
+        <div class="fsp-row">
+          <span class="fsp-name">Arapça</span>
+          <button class="fsp-dec" id="arDec">−</button>
+          <span class="fsp-val" id="arVal">24</span>
+          <button class="fsp-inc" id="arInc">+</button>
+        </div>
+        <div class="fsp-row">
+          <span class="fsp-name">Meal</span>
+          <button class="fsp-dec" id="trDec">−</button>
+          <span class="fsp-val" id="trVal">14</span>
+          <button class="fsp-inc" id="trInc">+</button>
+        </div>
+        <div class="fsp-divider"></div>
+        <div class="fsp-label">Göster / Gizle</div>
+        <div class="fsp-toggle-row">
+          <span class="fsp-toggle-name">Türkçe Meal</span>
+          <label class="toggle-sw">
+            <input type="checkbox" id="toggleMeal" checked/>
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+        <div class="fsp-toggle-row">
+          <span class="fsp-toggle-name">Kelime Anlamları</span>
+          <label class="toggle-sw">
+            <input type="checkbox" id="toggleWmn" checked/>
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <button class="bm-btn-hdr" id="bmOpenBtn">🔖 Yer İmleri</button>
+    <button class="bm-btn-hdr" id="statsOpenBtn">📊 İstatistik</button>
   </div>
 </header>
 <div class="ptop" style="opacity:.18"></div>
+
+<!-- ── STATS PANEL ── -->
+<div class="bm-overlay" id="statsOverlay"></div>
+<div class="stats-panel" id="statsPanel">
+  <div class="stats-top">
+    <div class="stats-title">📊 Kelime İstatistikleri</div>
+    <button class="stats-close" id="statsClose">×</button>
+  </div>
+  <div class="stats-body" id="statsBody"></div>
+</div>
+
+<!-- ── BOOKMARK OVERLAY + PANEL ── -->
+<div class="bm-overlay" id="bmOverlay"></div>
+<div class="bm-panel" id="bmPanel">
+  <div class="bm-top">
+    <div class="bm-title">🔖 Yer İmleri</div>
+    <button class="bm-close" id="bmClose">×</button>
+  </div>
+  <div class="bm-body" id="bmBody"></div>
+</div>
+
+<!-- ── SEARCH PANEL ── -->
+<div class="srch-panel" id="srchPanel">
+  <div class="srch-top">
+    <div class="srch-top-row">
+      <button class="srch-close" id="srchClose">×</button>
+      <div class="srch-input-wrap">
+        <input class="srch-input" id="srchInput" placeholder="Arama yapın…" autocomplete="off" spellcheck="false"/>
+        <button class="srch-clear hidden" id="srchClear">×</button>
+      </div>
+    </div>
+    <div class="srch-tabs">
+      <button class="srch-tab active" id="tabAr" data-tab="ar">🔤 Arapça</button>
+      <button class="srch-tab" id="tabTr" data-tab="tr">🇹🇷 Türkçe Meal</button>
+      <button class="srch-tab" id="tabRoot" data-tab="root">🌱 Kök Arama</button>
+    </div>
+  </div>
+  <div class="srch-body">
+    <div class="srch-inner">
+      <div class="srch-hint" id="srchHint">
+        <b>Nasıl arama yapılır?</b>
+        <span id="srchHintTxt">Arapça kelime veya ibare girin (hareketle veya harekesiz)</span>
+      </div>
+      <div id="rootSearchUI" class="hidden">
+        <input class="root-input" id="rootInput" placeholder="ك ت ب" maxlength="10" autocomplete="off"/>
+        <div class="root-hint">3 harfli Arapça kök girin (ör: كتب, رحم, علم)<br/>Köke ait tüm türevleri bulur</div>
+        <button class="root-search-btn" id="rootSearchBtn" disabled>Kök Ara</button>
+      </div>
+      <div class="sp hidden" id="srchSp"></div>
+      <div class="srch-status hidden" id="srchStatus"></div>
+      <div id="srchResults"></div>
+      <button class="load-more-srch hidden" id="srchMoreBtn">Devamını Yükle</button>
+    </div>
+  </div>
+</div>
 <div class="lay">
   <main class="main" id="main">
     <div id="chHdr"></div>
@@ -151,7 +376,6 @@
       Arapça kelimeye tıkla → Kur'an'daki geçişlerini gör &nbsp;|&nbsp; Meal kelimesine tıkla → Benzer ayetleri bul
     </div>
     <div id="vCon"></div>
-    <button class="btn-more hidden" id="moreBtn">Devamını Yükle</button>
     <div class="sp hidden" id="moreSp"></div>
   </main>
   <aside class="sbp" id="sb">
@@ -194,6 +418,9 @@ const IS_FILE = location.protocol === 'file:';
 
 /* ══ STATE ═══════════════════════════════════════════════════ */
 let curCh=1, curPg=1, verses=[], wbyCache={}, hintOff=false;
+
+// Hint sadece ilk açılışta gösterilir
+try { if (localStorage.getItem('kuran_hint_seen')) hintOff = true; } catch(e) {}
 let occSt={wtext:'',pg:0,totPg:1,loading:false};
 const $=id=>document.getElementById(id);
 
@@ -237,7 +464,6 @@ $('chSel').addEventListener('change', e => {
   if (IS_FILE) { showFileProtocolWarning(); return; }
   loadCh(+e.target.value);
 });
-$('moreBtn').addEventListener('click', () => showPg(curPg + 1));
 $('sbClose').addEventListener('click', closeSb);
 $('sbBack').addEventListener('click', closeSb);
 
@@ -285,9 +511,8 @@ function showFileProtocolWarning() {
 
 /* ══ CHAPTER LOADING ═════════════════════════════════════════ */
 function loadCh(id) {
-  curCh = id; curPg = 1; verses = []; hintOff = false;
+  curCh = id; curPg = 1; verses = [];
   $('vCon').innerHTML = '';
-  $('moreBtn').classList.add('hidden');
   $('moreSp').classList.add('hidden');
   $('hint').classList.add('hidden');
   closeSb();
@@ -323,6 +548,9 @@ async function fetchSurah(chId) {
     $('vCon').innerHTML = '';
     showPg(1);
     loadWby(chId);
+    // Hint sadece ilk açılışta, bir kez göster
+    if (!hintOff) $('hint').classList.remove('hidden');
+    else $('hint').classList.add('hidden');
   } catch(e) {
     const isFile = e.message === 'FILE_PROTOCOL';
     $('vCon').innerHTML = `
@@ -339,25 +567,32 @@ async function fetchSurah(chId) {
   }
 }
 
-function showPg(pg) {
+function showPg(pg, append) {
   curPg = pg;
-  const start = (pg - 1) * PER, slice = verses.slice(start, start + PER);
+  const start = (pg - 1) * PER;
+  const slice = verses.slice(start, start + PER);
   const wby   = wbyCache[curCh] || {};
+  const totPg = Math.ceil(verses.length / PER);
+
+  // Sure başlığını sadece 1. sayfada göster
+  $('chHdr').style.display = pg === 1 ? '' : 'none';
+
+  if (!append) {
+    $('vCon').innerHTML = '';
+  }
+
   slice.forEach((v, vi) => {
-    if ($('vCon').querySelector(`[data-vk="${CSS.escape(v.k)}"]`)) return;
+    if (Array.from($('vCon').querySelectorAll('.vc[data-vk]')).some(c=>c.getAttribute('data-vk')===v.k)) return;
     const d = document.createElement('div');
     d.innerHTML = renderV(v, vi, wby);
     $('vCon').appendChild(d.firstElementChild);
   });
+
   attachL();
-  const totPg = Math.ceil(verses.length / PER);
-  if (pg < totPg) {
-    $('moreBtn').classList.remove('hidden');
-    $('moreBtn').textContent = `Devamını Yükle (${start + slice.length} / ${verses.length})`;
-  } else {
-    $('moreBtn').classList.add('hidden');
-  }
-  if (!hintOff && verses.length > 0) $('hint').classList.remove('hidden');
+
+  // "Devamını Yükle" butonunu gizle — infinite scroll ile otomatik yükleniyor
+  
+
 }
 
 /* ══ WORD-BY-WORD ════════════════════════════════════════════ */
@@ -412,7 +647,7 @@ function renderV(v, vi, wby) {
   const trClean = dh(v.tr.replace(/<[^>]+>/g,''));
   const trHtml  = trClean ? `<div class="vt"><div class="vtl">Türkçe Meal (Diyanet) <span style="color:#3a6a48;font-size:8px">— kelimeye tıkla</span></div><div class="mt">${wrapMW(trClean)}</div></div>` : '';
   return `<div class="vc" data-vk="${esc(v.k)}" style="animation-delay:${(vi%15)*.04}s">
-    <div class="vtop"><div class="vnum">${v.n}</div>${arHtml}</div>${trHtml}</div>`;
+    <div class="vtop"><div class="vnum">${v.n}</div>${arHtml}<button class="bm-btn" data-vk="${esc(v.k)}" title="Yer imi ekle/çıkar">🔖</button></div>${trHtml}</div>`;
 }
 function isPunc(w) { return ['end','pause','sajdah'].includes(w?.char_type_name); }
 
@@ -423,7 +658,12 @@ function attachL() {
     el.addEventListener('click', () => {
       document.querySelectorAll('.wc.sel').forEach(e=>e.classList.remove('sel'));
       document.querySelectorAll('.mw.tsel').forEach(e=>e.classList.remove('tsel'));
-      el.classList.add('sel'); onArClick(el.dataset.wt, el.dataset.mn);
+  if (!hintOff) {
+    hintOff = true;
+    $('hint').classList.add('hidden');
+    try { localStorage.setItem('kuran_hint_seen', '1'); } catch(e) {}
+  }
+  onArClick(el.dataset.wt, el.dataset.mn);
     });
   });
   $('vCon').querySelectorAll('.mw:not([data-ls])').forEach(el => {
@@ -431,14 +671,24 @@ function attachL() {
     el.addEventListener('click', () => {
       document.querySelectorAll('.wc.sel').forEach(e=>e.classList.remove('sel'));
       document.querySelectorAll('.mw.tsel').forEach(e=>e.classList.remove('tsel'));
-      el.classList.add('tsel'); onTrClick(el.dataset.w);
+      el.classList.add('tsel');
+      if (!hintOff) { hintOff=true; $('hint').classList.add('hidden'); try{localStorage.setItem('kuran_hint_seen','1');}catch(e){} }
+      onTrClick(el.dataset.w);
     });
+  });
+  // Bookmark buttons
+  $('vCon').querySelectorAll('.bm-btn:not([data-ls])').forEach(el => {
+    el.dataset.ls = '1';
+    el.addEventListener('click', e => { e.stopPropagation(); toggleBookmark(el.dataset.vk, el); });
+    // Mark if already bookmarked
+    if (bmGet(el.dataset.vk)) el.classList.add('marked');
   });
 }
 
 /* ══ ARABIC WORD CLICK ═══════════════════════════════════════ */
 async function onArClick(wtext, wmn) {
-  if (!hintOff) { hintOff=true; $('hint').classList.add('hidden'); }
+  statsTrack(wtext, wmn); // istatistik kaydet
+  if (!hintOff) { hintOff=true; $('hint').classList.add('hidden'); try{localStorage.setItem('kuran_hint_seen','1');}catch(e){} }
   $('sbAr').classList.remove('hidden'); $('sbTr').classList.add('hidden');
   openSb();
   $('sbWord').textContent=wtext; $('sbMn').textContent=wmn; $('sbCt').textContent='';
@@ -537,7 +787,7 @@ function renderBas(wtext) {
 
 /* ══ TURKISH WORD CLICK ══════════════════════════════════════ */
 async function onTrClick(raw) {
-  if (!hintOff) { hintOff=true; $('hint').classList.add('hidden'); }
+  if (!hintOff) { hintOff=true; $('hint').classList.add('hidden'); try{localStorage.setItem('kuran_hint_seen','1');}catch(e){} }
   const stem=trStem(raw);
   $('sbAr').classList.add('hidden'); $('sbTr').classList.remove('hidden');
   openSb();
@@ -571,25 +821,321 @@ function hlStem(text,stem){const s=stem.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');re
 /* ══ NAVIGATE ════════════════════════════════════════════════ */
 async function navTo(vk) {
   if (!vk) return;
-  const[cs,vs]=vk.split(':'); const chId=+cs, vNum=+vs;
-  if (!chId||!vNum) return;
+  const [cs, vs] = vk.split(':');
+  const chId = +cs, vNum = +vs;
+  if (!chId || !vNum) return;
+
   closeSb();
-  if (curCh!==chId) {
-    $('chSel').value=chId; curCh=chId; curPg=1; verses=[]; hintOff=true;
-    $('vCon').innerHTML=''; $('moreBtn').classList.add('hidden');
-    renderChHdr(chId); await fetchSurah(chId);
+  closeSearch();
+
+  // 1. Farklı sure ise yükle ve verses dolana kadar bekle
+  if (curCh !== chId) {
+    $('chSel').value = chId;
+    curCh = chId; curPg = 1; verses = []; hintOff = true;
+    $('vCon').innerHTML = '';
+    renderChHdr(chId);
+    await fetchSurah(chId);
+    // verses array'inin dolmasını bekle (max 3 sn)
+    for (let i = 0; i < 20 && verses.length === 0; i++) {
+      await new Promise(r => setTimeout(r, 150));
+    }
   }
-  const tp=Math.ceil(vNum/PER);
-  while(curPg<tp) showPg(curPg+1);
-  setTimeout(()=>{
-    const el=$('vCon').querySelector(`[data-vk="${CSS.escape(vk)}"]`);
-    if (!el) return;
-    document.querySelectorAll('.vc.nav-hl').forEach(e=>e.classList.remove('nav-hl'));
-    el.classList.add('nav-hl');
-    const hh=document.querySelector('.hdr')?.offsetHeight||60;
-    window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-hh-16,behavior:'smooth'});
-    setTimeout(()=>el.classList.remove('nav-hl'),3000);
-  },100);
+
+  // 2. DOM temizle, hedef sayfaya kadar tüm ayetleri render et
+  $('vCon').innerHTML = '';
+  curPg = 0;
+  const targetPg = Math.ceil(vNum / PER);
+  for (let p = 1; p <= targetPg; p++) {
+    showPg(p, p > 1);
+  }
+
+  // 3. Tarayıcıya layout için 2 frame ver, sonra scroll et
+  await new Promise(r => requestAnimationFrame(r));
+  await new Promise(r => requestAnimationFrame(r));
+  await scrollToVerse(vk);
+}
+
+function findVerseEl(vk) {
+  const cards = $('vCon').querySelectorAll('.vc[data-vk]');
+  for (const c of cards) {
+    if (c.getAttribute('data-vk') === vk) return c;
+  }
+  return null;
+}
+
+async function scrollToVerse(vk) {
+  // Ayet DOM'da görünene kadar bekle (max ~1.5 sn)
+  let el = null;
+  for (let i = 0; i < 12; i++) {
+    el = findVerseEl(vk);
+    if (el) break;
+    await new Promise(r => setTimeout(r, 120));
+  }
+
+  if (!el) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  // Önce vurgula
+  document.querySelectorAll('.vc.nav-hl').forEach(e => e.classList.remove('nav-hl'));
+  el.classList.add('nav-hl');
+
+  // Layout oturması için bir frame bekle
+  await new Promise(r => requestAnimationFrame(r));
+  await new Promise(r => requestAnimationFrame(r));
+
+  // Header yüksekliği kadar boşluk bırakarak scroll et
+  const hh = document.querySelector('.hdr')?.offsetHeight || 60;
+  const rect = el.getBoundingClientRect();
+  const target = rect.top + window.scrollY - hh - 12;
+  window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+
+  setTimeout(() => el && el.classList.remove('nav-hl'), 3000);
+}
+
+/* ══ SEARCH ══════════════════════════════════════════════════ */
+let srchTab = 'ar';   // 'ar' | 'tr'
+let srchPg  = 1;
+let srchTotPg = 1;
+let srchQuery = '';
+let srchTimer = null;
+
+$('searchBtn').addEventListener('click', openSearch);
+$('srchClose').addEventListener('click', closeSearch);
+$('srchClear').addEventListener('click', () => { $('srchInput').value=''; $('srchClear').classList.add('hidden'); $('srchInput').focus(); clearSearch(); });
+
+// Tabs
+document.querySelectorAll('.srch-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    srchTab = tab.dataset.tab;
+    document.querySelectorAll('.srch-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const inp = $('srchInput');
+
+    // Kök arama sekmesi
+    if (srchTab === 'root') {
+      inp.style.display = 'none';
+      $('srchClear').classList.add('hidden');
+      $('rootSearchUI').classList.remove('hidden');
+      $('srchHint').classList.add('hidden');
+      $('srchResults').innerHTML = '';
+      $('srchStatus').classList.add('hidden');
+      $('srchMoreBtn').classList.add('hidden');
+      $('rootInput').focus();
+      return;
+    }
+
+    inp.style.display = '';
+    $('rootSearchUI').classList.add('hidden');
+
+    if (srchTab === 'ar') {
+      inp.placeholder = 'Arapça kelime girin…';
+      inp.classList.add('ar');
+      $('srchHintTxt').textContent = 'Arapça kelime veya ibare girin (hareketle veya harekesiz)';
+    } else {
+      inp.placeholder = 'Türkçe kelime girin…';
+      inp.classList.remove('ar');
+      $('srchHintTxt').textContent = 'Türkçe kelime girin, meallerde aranır';
+    }
+    const q = inp.value.trim();
+    if (q.length >= 2) runSearch(q, true);
+    else clearSearch();
+  });
+});
+
+// Input
+$('srchInput').addEventListener('input', e => {
+  const q = e.target.value.trim();
+  $('srchClear').classList.toggle('hidden', !q);
+  clearTimeout(srchTimer);
+  if (q.length < 2) { clearSearch(); return; }
+  srchTimer = setTimeout(() => runSearch(q, true), 400);
+});
+
+// Enter key
+$('srchInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { clearTimeout(srchTimer); const q=$('srchInput').value.trim(); if(q.length>=2) runSearch(q,true); }
+});
+
+$('srchMoreBtn').addEventListener('click', () => {
+  const q = $('srchInput').value.trim();
+  if (q) runSearch(q, false);
+});
+
+function openSearch() {
+  $('srchPanel').classList.add('open');
+  $('searchBtn').classList.add('active');
+  $('rootSearchUI').classList.add('hidden');
+  $('srchInput').style.display = '';
+  setTimeout(() => $('srchInput').focus(), 300);
+}
+function closeSearch() {
+  $('srchPanel').classList.remove('open');
+  $('searchBtn').classList.remove('active');
+  // Reset to arabic tab
+  srchTab = 'ar';
+  document.querySelectorAll('.srch-tab').forEach(t => t.classList.remove('active'));
+  $('tabAr').classList.add('active');
+  $('rootSearchUI').classList.add('hidden');
+  $('srchInput').style.display = '';
+}
+
+function clearSearch() {
+  $('srchResults').innerHTML = '';
+  $('srchStatus').classList.add('hidden');
+  $('srchMoreBtn').classList.add('hidden');
+  $('srchSp').classList.add('hidden');
+  $('srchHint').classList.remove('hidden');
+  srchPg = 1; srchTotPg = 1; srchQuery = '';
+}
+
+async function runSearch(q, fresh) {
+  if (IS_FILE) return;
+  if (fresh) {
+    srchPg = 1; srchQuery = q;
+    $('srchResults').innerHTML = '';
+    $('srchMoreBtn').classList.add('hidden');
+    $('srchHint').classList.add('hidden');
+    $('srchStatus').classList.add('hidden');
+  } else {
+    srchPg++;
+    const btn = $('srchMoreBtn'); btn.textContent='Yükleniyor…'; btn.disabled=true;
+  }
+  $('srchSp').classList.remove('hidden');
+
+  try {
+    if (srchTab === 'ar') {
+      await runArSearch(q, fresh);
+    } else {
+      await runTrSearch(q, fresh);
+    }
+  } catch(e) {
+    $('srchSp').classList.add('hidden');
+    if (fresh) $('srchResults').innerHTML = `<div class="srch-hint"><b>⚠️ Hata</b>İnternet bağlantınızı kontrol edin.</div>`;
+  }
+}
+
+async function runArSearch(q, fresh) {
+  const enc = encodeURIComponent(q);
+  const d   = await apiFetch(`${BASE_QC}/search?q=${enc}&language=tr&size=20&page=${srchPg}&translations=77`);
+  const res = d.search?.results || [];
+  const tot = d.search?.total_results || 0;
+  srchTotPg = d.search?.total_pages || 1;
+
+  $('srchSp').classList.add('hidden');
+  $('srchStatus').classList.remove('hidden');
+  $('srchStatus').textContent = tot > 0 ? `${tot} ayet bulundu` : 'Sonuç bulunamadı';
+
+  if (!res.length) { if(fresh) $('srchResults').innerHTML=''; return; }
+
+  const frag = document.createDocumentFragment();
+  const pending = res.map(occ => {
+    const card = makeSrCard(occ.verse_key);
+    // Arabic with highlights
+    const arDiv = card.querySelector('.sr-ar');
+    const ow = (occ.words||[]).filter(w=>!isPunc(w));
+    if (ow.length) {
+      ow.forEach(w => {
+        const wt = w.text_uthmani||w.text||'';
+        const span = document.createElement('span');
+        const matched = isMatch(wt, q);
+        span.className = matched ? 'sr-hl' : '';
+        span.textContent = wt + ' ';
+        arDiv.appendChild(span);
+      });
+    } else {
+      arDiv.textContent = occ.text || '';
+    }
+    frag.appendChild(card);
+    const ex = dh((occ.translations?.[0]?.text||'').replace(/<[^>]+>/g,''));
+    return { trDiv: card.querySelector('.sr-tr'), vk: occ.verse_key, ex };
+  });
+  $('srchResults').appendChild(frag);
+
+  // Load translations in parallel
+  await Promise.all(pending.map(async ({trDiv, vk, ex}) => {
+    try {
+      let tr = ex;
+      if (!tr) {
+        const vd = await apiFetch(`${BASE_QC}/verses/by_key/${vk}?translations=77&language=tr`);
+        tr = dh((vd.verse?.translations?.[0]?.text||'').replace(/<[^>]+>/g,''));
+      }
+      trDiv.textContent = tr || '—';
+    } catch(e) { trDiv.textContent = '—'; }
+  }));
+
+  updateMoreBtn(tot);
+}
+
+async function runTrSearch(q, fresh) {
+  const stem = trStem(q.toLowerCase());
+  const enc  = encodeURIComponent(stem);
+  const d    = await apiFetch(`${BASE}/search/${enc}/all/tr.diyanet`);
+  const matches = d.data?.matches || [];
+  const tot     = d.data?.count || 0;
+  srchTotPg = 1; // alquran.cloud returns all at once
+
+  $('srchSp').classList.add('hidden');
+  $('srchStatus').classList.remove('hidden');
+  $('srchStatus').textContent = tot > 0 ? `${tot} ayet bulundu` : 'Sonuç bulunamadı';
+
+  if (!matches.length) { if(fresh) $('srchResults').innerHTML=''; return; }
+
+  const frag = document.createDocumentFragment();
+  const pending = matches.slice((srchPg-1)*20, srchPg*20).map(m => {
+    const vk   = `${m.surah?.number}:${m.numberInSurah}`;
+    const card = makeSrCard(vk);
+    // Translation with highlight
+    const trDiv = card.querySelector('.sr-tr');
+    const trText = dh((m.text||'').replace(/<[^>]+>/g,''));
+    trDiv.innerHTML = hlTrSearch(trText, stem);
+    frag.appendChild(card);
+    return { arDiv: card.querySelector('.sr-ar'), vk };
+  });
+  $('srchResults').appendChild(frag);
+
+  // Load Arabic in parallel
+  await Promise.all(pending.map(async ({arDiv, vk}) => {
+    try {
+      const vd = await apiFetch(`${BASE}/ayah/${vk}/quran-uthmani`);
+      arDiv.textContent = vd.data?.text || '—';
+    } catch(e) { arDiv.textContent = '—'; }
+  }));
+
+  srchTotPg = Math.ceil(tot / 20);
+  updateMoreBtn(tot);
+}
+
+function makeSrCard(vk) {
+  const card = document.createElement('div');
+  card.className = 'sr-card';
+  card.innerHTML = `
+    <div class="sr-ref">${esc(vk)}</div>
+    <div class="sr-ar"></div>
+    <div class="sr-tr">Yükleniyor…</div>`;
+  card.addEventListener('click', () => {
+    closeSearch();
+    setTimeout(() => navTo(vk), 320);
+  });
+  return card;
+}
+
+function hlTrSearch(text, stem) {
+  const s = stem.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return esc(text).replace(new RegExp(`(\\S*${s}\\S*)`, 'gi'), '<span class="sr-tr-hl">$1</span>');
+}
+
+function updateMoreBtn(tot) {
+  const loaded = srchPg * 20;
+  const btn = $('srchMoreBtn');
+  if (srchPg < srchTotPg && loaded < tot) {
+    btn.classList.remove('hidden');
+    btn.textContent = `Devamını Yükle (${Math.min(loaded, tot)} / ${tot})`;
+    btn.disabled = false;
+  } else {
+    btn.classList.add('hidden');
+  }
 }
 
 /* ══ SIDEBAR ═════════════════════════════════════════════════ */
@@ -600,6 +1146,435 @@ function closeSb() {
   document.querySelectorAll('.mw.tsel').forEach(e=>e.classList.remove('tsel'));
   $('sbAr').classList.remove('hidden'); $('sbTr').classList.add('hidden');
 }
+
+/* ══ FONT SIZE ═══════════════════════════════════════════════ */
+const FONT_DEFAULTS = { ar: 24, tr: 14 };
+const FONT_LIMITS   = { ar: [16, 40], tr: [10, 24] };
+let fontSz = { ar: FONT_DEFAULTS.ar, tr: FONT_DEFAULTS.tr };
+
+function applyFontSizes() {
+  document.documentElement.style.setProperty('--war-size', fontSz.ar + 'px');
+  document.documentElement.style.setProperty('--vp-size',  (fontSz.ar + 2) + 'px');
+  document.documentElement.style.setProperty('--vt-size',  fontSz.tr + 'px');
+  document.documentElement.style.setProperty('--oaw-size', Math.max(14, fontSz.ar - 5) + 'px');
+  $('arVal').textContent = fontSz.ar;
+  $('trVal').textContent = fontSz.tr;
+  try { localStorage.setItem('kuran_font', JSON.stringify(fontSz)); } catch(e) {}
+}
+
+(function initFont() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('kuran_font'));
+    if (saved?.ar) fontSz = saved;
+  } catch(e) {}
+  applyFontSizes();
+  $('arVal').textContent = fontSz.ar;
+  $('trVal').textContent = fontSz.tr;
+})();
+
+$('fontBtn').addEventListener('click', e => {
+  e.stopPropagation();
+  $('fontPopup').classList.toggle('hidden');
+});
+document.addEventListener('click', e => {
+  if (!$('fontWrap').contains(e.target)) $('fontPopup').classList.add('hidden');
+});
+$('arDec').addEventListener('click', () => { if(fontSz.ar>FONT_LIMITS.ar[0]){fontSz.ar-=2;applyFontSizes();} });
+$('arInc').addEventListener('click', () => { if(fontSz.ar<FONT_LIMITS.ar[1]){fontSz.ar+=2;applyFontSizes();} });
+$('trDec').addEventListener('click', () => { if(fontSz.tr>FONT_LIMITS.tr[0]){fontSz.tr-=1;applyFontSizes();} });
+$('trInc').addEventListener('click', () => { if(fontSz.tr<FONT_LIMITS.tr[1]){fontSz.tr+=1;applyFontSizes();} });
+
+/* ── Display toggles ── */
+let showMeal = true, showWmn = true;
+
+(function initToggles() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('kuran_display') || '{}');
+    if (saved.meal === false) { showMeal = false; }
+    if (saved.wmn  === false) { showWmn  = false; }
+  } catch(e) {}
+  applyToggles(false);
+})();
+
+function applyToggles(save) {
+  document.body.classList.toggle('hide-meal', !showMeal);
+  document.body.classList.toggle('hide-wmn',  !showWmn);
+  $('toggleMeal').checked = showMeal;
+  $('toggleWmn').checked  = showWmn;
+  if (save) {
+    try { localStorage.setItem('kuran_display', JSON.stringify({meal:showMeal, wmn:showWmn})); } catch(e) {}
+  }
+}
+
+$('toggleMeal').addEventListener('change', () => { showMeal = $('toggleMeal').checked; applyToggles(true); });
+$('toggleWmn').addEventListener('change',  () => { showWmn  = $('toggleWmn').checked;  applyToggles(true); });
+
+/* ══ BOOKMARKS ═══════════════════════════════════════════════ */
+function bmAll() {
+  try { return JSON.parse(localStorage.getItem('kuran_bm') || '{}'); } catch(e) { return {}; }
+}
+function bmGet(vk) { return !!bmAll()[vk]; }
+function bmSet(vk, arText) {
+  try {
+    const all = bmAll(); all[vk] = { vk, ar: arText, ts: Date.now() };
+    localStorage.setItem('kuran_bm', JSON.stringify(all));
+  } catch(e) {}
+}
+function bmDel(vk) {
+  try {
+    const all = bmAll(); delete all[vk];
+    localStorage.setItem('kuran_bm', JSON.stringify(all));
+  } catch(e) {}
+}
+
+function toggleBookmark(vk, btnEl) {
+  if (bmGet(vk)) {
+    bmDel(vk);
+    btnEl.classList.remove('marked');
+    btnEl.title = 'Yer imi ekle';
+    showToast('Yer imi kaldırıldı');
+  } else {
+    // Get Arabic text from the verse card
+    const card = Array.from($('vCon').querySelectorAll('.vc[data-vk]')).find(c=>c.getAttribute('data-vk')===vk);
+    const arText = card?.querySelector('.vp')?.textContent
+      || Array.from(card?.querySelectorAll('.war') || []).map(s=>s.textContent).join(' ')
+      || '';
+    bmSet(vk, arText.trim().slice(0, 120));
+    btnEl.classList.add('marked');
+    btnEl.title = 'Yer imini kaldır';
+    showToast('Yer imi eklendi 🔖');
+  }
+}
+
+function renderBmPanel() {
+  const all  = bmAll();
+  const list = Object.values(all).sort((a, b) => {
+    // Sort by surah:ayah order
+    const [as,av]=(a.vk||'0:0').split(':').map(Number);
+    const [bs,bv]=(b.vk||'0:0').split(':').map(Number);
+    return as!==bs ? as-bs : av-bv;
+  });
+  const body = $('bmBody');
+  if (!list.length) {
+    body.innerHTML = `<div class="bm-empty"><b>🔖 Henüz yer imi yok</b>Bir ayet okurken 🔖 butonuna tıklayarak yer imi ekleyebilirsiniz.</div>`;
+    return;
+  }
+  body.innerHTML = '';
+  list.forEach(bm => {
+    const ch = CHS.find(x => x.id === +bm.vk.split(':')[0]);
+    const item = document.createElement('div');
+    item.className = 'bm-item';
+    item.innerHTML = `
+      <div class="bm-item-info">
+        <div class="bm-item-ref">${esc(bm.vk)} · ${esc(ch?.tr || '')}</div>
+        <div class="bm-item-ar">${esc(bm.ar)}</div>
+      </div>
+      <button class="bm-item-del" data-vk="${esc(bm.vk)}" title="Kaldır">✕</button>`;
+    item.querySelector('.bm-item-info').addEventListener('click', () => {
+      closeBmPanel();
+      setTimeout(() => navTo(bm.vk), 320);
+    });
+    item.querySelector('.bm-item-del').addEventListener('click', e => {
+      e.stopPropagation();
+      bmDel(bm.vk);
+      // Update button in verse cards if visible
+      const btn = Array.from($('vCon').querySelectorAll('.bm-btn[data-vk]')).find(b=>b.getAttribute('data-vk')===bm.vk);
+      if (btn) btn.classList.remove('marked');
+      renderBmPanel();
+    });
+    body.appendChild(item);
+  });
+}
+
+$('bmOpenBtn').addEventListener('click', () => { renderBmPanel(); $('bmPanel').classList.add('open'); $('bmOverlay').classList.add('show'); });
+$('bmClose').addEventListener('click', closeBmPanel);
+$('bmOverlay').addEventListener('click', closeBmPanel);
+function closeBmPanel() { $('bmPanel').classList.remove('open'); $('bmOverlay').classList.remove('show'); }
+
+/* ══ WORD STATISTICS ═════════════════════════════════════════ */
+function statsAll() {
+  try { return JSON.parse(localStorage.getItem('kuran_stats') || '{}'); } catch(e) { return {}; }
+}
+function statsSave(data) {
+  try { localStorage.setItem('kuran_stats', JSON.stringify(data)); } catch(e) {}
+}
+function statsTrack(wtext, wmn) {
+  if (!wtext) return;
+  const all = statsAll();
+  const key = norm(wtext); // normalize to merge variants
+  if (!all[key]) all[key] = { wtext, wmn, count: 0, first: Date.now() };
+  all[key].count++;
+  all[key].last = Date.now();
+  statsSave(all);
+}
+
+function renderStatsPanel() {
+  const all     = statsAll();
+  const entries = Object.values(all).sort((a, b) => b.count - a.count);
+  const body    = $('statsBody');
+
+  const totalClicks  = entries.reduce((s, e) => s + e.count, 0);
+  const uniqueWords  = entries.length;
+  const topWord      = entries[0];
+
+  if (!entries.length) {
+    body.innerHTML = `<div class="stats-empty">Henüz kelime tıklanmadı.<br/>Ayetlerdeki kelimelere tıkladıkça istatistikler burada görünür.</div>`;
+    return;
+  }
+
+  const maxCount = topWord.count;
+  const top10    = entries.slice(0, 10);
+
+  body.innerHTML = '';
+
+  // Genel sayılar
+  const overview = document.createElement('div');
+  overview.className = 'stats-section';
+  overview.innerHTML = `
+    <div class="stats-sec-title">Genel Bakış</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <div class="stats-num"><span class="stats-val">${totalClicks}</span><span class="stats-lbl">toplam tıklama</span></div>
+      <div class="stats-num"><span class="stats-val">${uniqueWords}</span><span class="stats-lbl">benzersiz kelime</span></div>
+    </div>`;
+  body.appendChild(overview);
+
+  // En çok tıklanan kelimeler bar chart
+  const barSec = document.createElement('div');
+  barSec.className = 'stats-section';
+  barSec.innerHTML = `<div class="stats-sec-title">En Çok Tıklanan</div>`;
+  top10.forEach(e => {
+    const pct = Math.round((e.count / maxCount) * 100);
+    const row = document.createElement('div');
+    row.className = 'stats-bar-wrap';
+    row.innerHTML = `
+      <div class="stats-bar-label">
+        <span style="font-family:'Amiri',serif;font-size:18px;direction:rtl">${esc(e.wtext)}</span>
+        <span>${e.count} kez</span>
+      </div>
+      <div class="stats-bar"><div class="stats-bar-fill" style="width:${pct}%"></div></div>`;
+    barSec.appendChild(row);
+  });
+  body.appendChild(barSec);
+
+  // Tüm liste
+  const listSec = document.createElement('div');
+  listSec.className = 'stats-section';
+  listSec.innerHTML = `<div class="stats-sec-title">Tüm Kelimeler (${uniqueWords})</div>`;
+  entries.forEach(e => {
+    const item = document.createElement('div');
+    item.className = 'stats-word-item';
+    item.innerHTML = `
+      <div class="stats-word-ar">${esc(e.wtext)}</div>
+      <div class="stats-word-mn">${esc(e.wmn||'')}</div>
+      <div class="stats-word-cnt">${e.count}×</div>`;
+    item.addEventListener('click', () => {
+      closeStatsPanel();
+      setTimeout(() => onArClick(e.wtext, e.wmn||''), 320);
+    });
+    listSec.appendChild(item);
+  });
+
+  // Temizle butonu
+  const clearBtn = document.createElement('button');
+  clearBtn.className = 'stats-clear-btn';
+  clearBtn.textContent = 'İstatistikleri Sıfırla';
+  clearBtn.addEventListener('click', () => {
+    if (confirm('Tüm kelime istatistikleri silinsin mi?')) {
+      try { localStorage.removeItem('kuran_stats'); } catch(e) {}
+      renderStatsPanel();
+    }
+  });
+  listSec.appendChild(clearBtn);
+  body.appendChild(listSec);
+}
+
+$('statsOpenBtn').addEventListener('click', () => {
+  renderStatsPanel();
+  $('statsPanel').classList.add('open');
+  $('statsOverlay').classList.add('show');
+});
+$('statsClose').addEventListener('click', closeStatsPanel);
+$('statsOverlay').addEventListener('click', closeStatsPanel);
+function closeStatsPanel() {
+  $('statsPanel').classList.remove('open');
+  $('statsOverlay').classList.remove('show');
+}
+
+/* ══ ROOT SEARCH ═════════════════════════════════════════════ */
+let rootSearchActive = false;
+
+function initRootSearch() {
+  const inp = $('rootInput');
+  const btn = $('rootSearchBtn');
+
+  inp.addEventListener('input', () => {
+    const v = inp.value.trim();
+    const letters = v.replace(/\s+/g,'').length;
+    btn.disabled = letters < 2;
+  });
+
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !btn.disabled) runRootSearch();
+  });
+
+  btn.addEventListener('click', runRootSearch);
+}
+
+async function runRootSearch() {
+  const root = $('rootInput').value.trim().replace(/\s+/g,'');
+  if (!root || root.length < 2) return;
+
+  $('srchResults').innerHTML = '';
+  $('srchMoreBtn').classList.add('hidden');
+  $('srchStatus').classList.add('hidden');
+  $('srchSp').classList.remove('hidden');
+
+  try {
+    // Use quran.com search with the root/word
+    const q   = encodeURIComponent(root);
+    const d   = await apiFetch(`${BASE_QC}/search?q=${q}&language=tr&size=30&page=1&translations=77`);
+    const res = d.search?.results || [];
+    const tot = d.search?.total_results || 0;
+    srchTotPg = d.search?.total_pages || 1;
+    srchPg    = 1;
+    srchQuery = root;
+
+    $('srchSp').classList.add('hidden');
+    $('srchStatus').classList.remove('hidden');
+    $('srchStatus').textContent = tot > 0
+      ? `"${root}" köküne ait ${tot} ayet`
+      : 'Bu köke ait ayet bulunamadı';
+
+    if (!res.length) return;
+
+    const frag    = document.createDocumentFragment();
+    const pending = res.map(occ => {
+      const card = makeSrCard(occ.verse_key);
+      // Highlight matching root letters in Arabic
+      const arDiv = card.querySelector('.sr-ar');
+      const ow    = (occ.words || []).filter(w => !isPunc(w));
+      if (ow.length) {
+        ow.forEach(w => {
+          const wt   = w.text_uthmani || w.text || '';
+          const span = document.createElement('span');
+          span.className   = isMatch(wt, root) ? 'sr-hl' : '';
+          span.textContent = wt + ' ';
+          arDiv.appendChild(span);
+        });
+      } else {
+        arDiv.textContent = occ.text || '';
+      }
+      frag.appendChild(card);
+      const ex = dh((occ.translations?.[0]?.text||'').replace(/<[^>]+>/g,''));
+      return { trDiv: card.querySelector('.sr-tr'), vk: occ.verse_key, ex };
+    });
+    $('srchResults').appendChild(frag);
+
+    await Promise.all(pending.map(async ({trDiv, vk, ex}) => {
+      try {
+        let tr = ex;
+        if (!tr) {
+          const vd = await apiFetch(`${BASE_QC}/verses/by_key/${vk}?translations=77&language=tr`);
+          tr = dh((vd.verse?.translations?.[0]?.text||'').replace(/<[^>]+>/g,''));
+        }
+        trDiv.textContent = tr || '—';
+      } catch(e) { trDiv.textContent = '—'; }
+    }));
+
+    updateMoreBtn(tot);
+  } catch(e) {
+    $('srchSp').classList.add('hidden');
+    $('srchResults').innerHTML = `<div class="srch-hint"><b>⚠️</b>İnternet bağlantısını kontrol edin.</div>`;
+  }
+}
+
+initRootSearch();
+
+/* ══ TOAST ═══════════════════════════════════════════════════ */
+let toastTimer = null;
+function showToast(msg) {
+  let t = document.getElementById('_toast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = '_toast';
+    t.style.cssText = 'position:fixed;bottom:max(28px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(20px);background:#0c1f16;border:1px solid #2a5a38;color:#6aaa7a;font-family:Cinzel,serif;font-size:10px;letter-spacing:2px;padding:10px 22px;border-radius:20px;z-index:500;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;white-space:nowrap';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = '1'; t.style.transform = 'translateX(-50%) translateY(0)';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.style.opacity='0'; t.style.transform='translateX(-50%) translateY(20px)'; }, 2000);
+}
+
+/* ══ SWIPE NAVIGATION ════════════════════════════════════════ */
+(function initSwipe() {
+  let startX = 0, startY = 0;
+  let lockDir = null;   // 'h' | 'v' | null
+  const THRESHOLD = 50;
+  const LOCK_PX   = 10; // px before we decide direction
+
+  function goPage(dir) {
+    const totPg = Math.ceil(verses.length / PER);
+    const next  = curPg + dir;
+    if (next < 1 || next > totPg) return;
+    showPg(next);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    showToast(dir > 0 ? `Sayfa ${next} →` : `← Sayfa ${next}`);
+  }
+
+  function panelOpen() {
+    return $('sb').classList.contains('open')
+        || $('srchPanel').classList.contains('open')
+        || $('bmPanel').classList.contains('open');
+  }
+
+  const mainEl = document.getElementById('main');
+
+  mainEl.addEventListener('touchstart', e => {
+    if (panelOpen()) return;
+    const t = e.touches[0];
+    startX = t.clientX;
+    startY = t.clientY;
+    lockDir = null;
+  }, { passive: true });
+
+  mainEl.addEventListener('touchmove', e => {
+    if (panelOpen() || lockDir !== null) return;
+    const t  = e.touches[0];
+    const dx = Math.abs(t.clientX - startX);
+    const dy = Math.abs(t.clientY - startY);
+    if (dx < LOCK_PX && dy < LOCK_PX) return;
+    lockDir = dx > dy ? 'h' : 'v';
+  }, { passive: true });
+
+  mainEl.addEventListener('touchend', e => {
+    if (panelOpen() || lockDir !== 'h') return;
+    const t  = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    if (Math.abs(dx) < THRESHOLD) return;
+    goPage(dx > 0 ? 1 : -1);
+    lockDir = null;
+  }, { passive: true });
+})();
+
+/* ══ INFINITE SCROLL ═════════════════════════════════════════ */
+(function initInfiniteScroll() {
+  // Sentinel element — vCon'un sonuna eklenir, görününce sonraki sayfa yüklenir
+  const sentinel = document.createElement('div');
+  sentinel.id = 'scrollSentinel';
+  sentinel.style.cssText = 'height:1px;margin-top:8px';
+  $('main').appendChild(sentinel);
+
+  const observer = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) return;
+    const totPg = Math.ceil(verses.length / PER);
+    if (curPg < totPg) {
+      showPg(curPg + 1, true);
+    }
+  }, { rootMargin: '200px' });
+
+  observer.observe(sentinel);
+})();
 
 /* ══ HELPERS ═════════════════════════════════════════════════ */
 function wrapMW(t){return t.replace(/(\S+)/g,m=>{const c=m.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ0-9]/g,'').toLowerCase();if(!c||c.length<3)return esc(m);return `<span class="mw" data-w="${esc(c)}">${esc(m)}</span>`;});}
