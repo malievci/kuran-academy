@@ -117,6 +117,42 @@
     .search-btn:hover{border-color:#c8a84b;color:#c8a84b}
     .search-btn.active{border-color:#c8a84b;color:#c8a84b;background:rgba(200,168,75,.08)}
 
+    /* ── Mushaf view ── */
+    /* ── Mushaf view ── */
+    .mushaf-btn{background:transparent;border:1px solid #2a5a38;border-radius:8px;color:#7aad8a;padding:9px 14px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
+    .mushaf-btn:hover{border-color:#c8a84b;color:#c8a84b}
+    .mushaf-btn.active{border-color:#c8a84b;color:#c8a84b;background:rgba(200,168,75,.08)}
+    .mushaf-view{display:none;position:fixed;inset:0;z-index:150;background:#060e0a;flex-direction:column}
+    .mushaf-view.active{display:flex}
+    .mushaf-topbar{display:flex;align-items:center;justify-content:space-between;padding:max(12px,env(safe-area-inset-top)) 16px 10px;background:#060e0a;border-bottom:1px solid #1a3020;flex-shrink:0}
+    .mushaf-topbar-info{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:#3a6a48;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+    .mushaf-close-btn{background:transparent;border:1px solid #2a5a38;border-radius:50%;width:34px;height:34px;color:#7aad8a;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;line-height:1;flex-shrink:0}
+    .mushaf-close-btn:hover{border-color:#c8a84b;color:#c8a84b}
+    .mushaf-content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    .mushaf-content::-webkit-scrollbar{width:3px}
+    .mushaf-content::-webkit-scrollbar-thumb{background:#2a5a38;border-radius:2px}
+    .mushaf-page{max-width:660px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left)) 40px}
+    .mushaf-basmala{font-family:'Amiri',serif;font-size:30px;color:#c8a84b;text-align:center;direction:rtl;margin-bottom:22px;text-shadow:0 2px 14px rgba(200,168,75,.25);line-height:1.6}
+    .mushaf-surah-header{text-align:center;margin:24px 0 14px}
+    .mushaf-surah-name{font-family:'Amiri',serif;font-size:38px;color:#c8a84b;display:block;text-shadow:0 2px 14px rgba(200,168,75,.22)}
+    .mushaf-surah-meta{font-family:'Cinzel',serif;font-size:9px;color:#3a6a48;letter-spacing:2px;text-transform:uppercase;margin-top:4px;display:block}
+    .mushaf-verses{direction:rtl;text-align:justify;font-family:'Amiri',serif;font-size:var(--mfont,28px);color:#f0e0b0;line-height:2.6;word-spacing:6px}
+    .mushaf-word{cursor:pointer;border-radius:4px;padding:1px 3px;transition:background .12s,color .12s;display:inline}
+    .mushaf-word:hover{background:rgba(200,168,75,.18);color:#f5d76e}
+    .mushaf-word.msel{background:rgba(200,168,75,.28);color:#f5d76e;box-shadow:0 0 10px rgba(200,168,75,.35)}
+    .mushaf-end{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid rgba(200,168,75,.35);border-radius:50%;font-family:'Amiri',serif;font-size:12px;color:#c8a84b;margin:0 3px;vertical-align:middle;cursor:default}
+    .mushaf-nav{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;padding-bottom:max(10px,env(safe-area-inset-bottom));background:#060e0a;border-top:1px solid #1a3020;flex-shrink:0;gap:10px}
+    .mushaf-nav-btn{background:transparent;border:1px solid #2a5a38;border-radius:8px;color:#6aaa7a;min-width:48px;height:44px;font-size:22px;cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .mushaf-nav-btn:hover{border-color:#c8a84b;color:#c8a84b}
+    .mushaf-nav-btn:disabled{opacity:.3;cursor:not-allowed}
+    .mushaf-pg-input-wrap{display:flex;align-items:center;gap:6px;flex:1;justify-content:center}
+    .mushaf-pg-input{background:#0c1f16;border:1px solid #2a5a38;border-radius:6px;color:#e8d8b0;padding:9px 8px;font-family:'Cinzel',serif;font-size:14px;width:64px;text-align:center;outline:none}
+    .mushaf-pg-input:focus{border-color:#c8a84b}
+    .mushaf-pg-total{font-family:'Cinzel',serif;font-size:11px;color:#3a6a48;letter-spacing:1px}
+    .mfont-btn{background:transparent;border:1px solid #1a3020;border-radius:6px;color:#4a7a58;width:32px;height:32px;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;line-height:1}
+    .mfont-btn:hover{border-color:#2a5a38;color:#6aaa7a}
+    .mushaf-spinner{text-align:center;padding:60px 20px;color:#3a6a48;font-style:italic;font-size:14px}
+
     /* ── Search panel overlay ── */
     .srch-panel{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(5,14,11,.96);z-index:300;display:flex;flex-direction:column;transform:translateY(-100%);transition:transform .3s ease}
     .srch-panel.open{transform:translateY(0)}
@@ -283,6 +319,7 @@
       <span class="sa">▼</span>
     </div>
     <button class="search-btn" id="searchBtn">🔍 Ara</button>
+    <button class="mushaf-btn" id="mushafBtn">📖 Mushaf</button>
     <div class="font-wrap" id="fontWrap">
       <button class="font-btn" id="fontBtn">Aa</button>
     </div>
@@ -391,6 +428,31 @@
       Arapça kelimeye tıkla → Kur'an'daki geçişlerini gör &nbsp;|&nbsp; Meal kelimesine tıkla → Benzer ayetleri bul
     </div>
     <div id="vCon"></div>
+    <!-- Mushaf view — full screen overlay -->
+    <div class="mushaf-view" id="mushafView">
+      <div class="mushaf-topbar">
+        <div class="mushaf-topbar-info">
+          <span id="mPageInfo">Sayfa 1</span>
+          <span id="mSurahInfo" style="color:#5a8a6a"></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="mfont-btn" id="mFontDec" title="Küçült">A−</button>
+          <button class="mfont-btn" id="mFontInc" title="Büyüt">A+</button>
+          <button class="mushaf-close-btn" id="mushafClose">×</button>
+        </div>
+      </div>
+      <div class="mushaf-content" id="mushafContent">
+        <div class="mushaf-page" id="mushafPage"></div>
+      </div>
+      <nav class="mushaf-nav">
+        <button class="mushaf-nav-btn" id="mPrev">‹</button>
+        <div class="mushaf-pg-input-wrap">
+          <input class="mushaf-pg-input" id="mPgInput" type="number" min="1" max="604" value="1"/>
+          <span class="mushaf-pg-total">/ 604</span>
+        </div>
+        <button class="mushaf-nav-btn" id="mNext">›</button>
+      </nav>
+    </div>
     <div class="sp hidden" id="moreSp"></div>
   </main>
   <aside class="sbp" id="sb">
@@ -611,16 +673,110 @@ function showPg(pg, append) {
 }
 
 /* ══ WORD-BY-WORD ════════════════════════════════════════════ */
+/* ══ WORD MEANING TRANSLATION ════════════════════════════════ */
+// Kuran'da geçen yaygın İngilizce kelime anlamları → Türkçe karşılıkları
+const EN_TR = {
+  // Tanrı ve isimler
+  "allah":"Allah","god":"Allah","lord":"Rab","the lord":"Rab",
+  "merciful":"Merhametli","compassionate":"Şefkatli","gracious":"Lütufkâr",
+  "forgiving":"Bağışlayan","knowing":"Bilen","hearing":"İşiten",
+  "seeing":"Gören","wise":"Hikmetli","powerful":"Güçlü",
+  "almighty":"Her şeye Gücü Yeten","creator":"Yaratıcı","sustainer":"Rızık Veren",
+  // Fiiller
+  "say":"de/söyle","said":"dedi","believe":"iman et","disbelieve":"inkâr et",
+  "do":"yap","did":"yaptı","make":"yap","made":"yaptı","take":"al","took":"aldı",
+  "give":"ver","gave":"verdi","come":"gel","came":"geldi","go":"git","went":"gitti",
+  "see":"gör","saw":"gördü","hear":"duy","heard":"duydu","know":"bil","knew":"bildi",
+  "worship":"ibadet et","pray":"dua et","forgive":"bağışla","guide":"yönlendir",
+  "punish":"cezalandır","reward":"ödüllendir","protect":"koru","help":"yardım et",
+  "send":"gönder","sent":"gönderdi","bring":"getir","brought":"getirdi",
+  "fear":"kork","love":"sev","hate":"nefret et","obey":"itaat et",
+  "enter":"gir","return":"dön","turn":"çevir","leave":"bırak",
+  "gather":"topla","judge":"hükmet","create":"yarat","created":"yarattı",
+  "reveal":"vahyet","revealed":"vahyetti","recite":"oku","write":"yaz",
+  "spend":"harca","fight":"savaş","kill":"öldür","die":"öl","born":"doğan",
+  "repent":"tövbe et","forgiven":"bağışlanmış","blessed":"mübarek",
+  "forbidden":"yasak","permitted":"helal","commanded":"emredildi",
+  // İsimler
+  "prophet":"peygamber","messenger":"elçi","angel":"melek","devil":"şeytan",
+  "believer":"mümin","disbeliever":"kâfir","hypocrite":"münafık",
+  "righteous":"salih","wrongdoer":"zalim","people":"insanlar","man":"adam",
+  "woman":"kadın","child":"çocuk","son":"oğul","daughter":"kız",
+  "father":"baba","mother":"anne","family":"aile","tribe":"kabile",
+  "nation":"millet","community":"topluluk","companions":"sahabe",
+  // Kavramlar
+  "faith":"iman","prayer":"namaz","fasting":"oruç","pilgrimage":"hac",
+  "charity":"sadaka","truth":"hak/doğru","light":"nur/ışık","darkness":"karanlık",
+  "guidance":"hidayet","mercy":"rahmet","grace":"lütuf","blessing":"nimet",
+  "punishment":"azap/ceza","reward":"mükâfat","paradise":"cennet","hell":"cehennem",
+  "fire":"ateş","water":"su","earth":"yer/toprak","heaven":"gök/cennet",
+  "sky":"gök","sun":"güneş","moon":"ay","star":"yıldız","day":"gün",
+  "night":"gece","morning":"sabah","evening":"akşam","time":"zaman",
+  "heart":"kalp","soul":"ruh/nefis","mind":"akıl","spirit":"ruh",
+  "knowledge":"ilim","wisdom":"hikmet","power":"güç","sign":"ayet/işaret",
+  "book":"kitap","scripture":"kitap","revelation":"vahiy","verse":"ayet",
+  "chapter":"sure","word":"kelime","name":"isim","way":"yol","path":"yol",
+  "right":"doğru/hak","wrong":"yanlış/batıl","good":"iyi","evil":"kötü",
+  "creation":"yaratılış","resurrection":"diriliş","judgment":"yargı","day of judgment":"kıyamet",
+  "world":"dünya","life":"hayat","death":"ölüm","afterlife":"ahiret",
+  "covenant":"ahit","promise":"vaad","test":"imtihan","patience":"sabır",
+  "gratitude":"şükür","repentance":"tövbe","sin":"günah","forgiveness":"mağfiret",
+  "justice":"adalet","oppression":"zulüm","peace":"barış","war":"savaş",
+  "victory":"zafer","defeat":"yenilgi","wealth":"servet","poverty":"fakirlik",
+  "food":"yiyecek","drink":"içecek","house":"ev","city":"şehir","land":"toprak",
+  "sea":"deniz","river":"nehir","mountain":"dağ","tree":"ağaç","garden":"bahçe",
+  // Sık geçen yardımcı ifadeler
+  "indeed":"şüphesiz","verily":"doğrusu","truly":"gerçekten","surely":"elbette",
+  "except":"hariç","but":"ama/fakat","and":"ve","or":"veya","not":"değil",
+  "those":"onlar","these":"bunlar","that":"o/şu","this":"bu",
+  "who":"kim/ki","which":"hangi/ki","what":"ne","how":"nasıl","when":"ne zaman",
+  "where":"nerede","why":"neden","all":"hepsi/tüm","every":"her","none":"hiçbiri",
+  "some":"bazı","many":"çok","few":"az","more":"daha fazla","most":"çoğu",
+  "among":"arasında","between":"arasında","with":"ile","without":"olmadan",
+  "before":"önce","after":"sonra","above":"üzerinde","below":"altında",
+  "upon":"üzerine","within":"içinde","from":"den/dan","to":"e/a",
+  "of":"nin/nın","in":"de/da","on":"üzerinde","at":"de/da",
+  "for":"için","by":"tarafından","as":"olarak","like":"gibi",
+  "if":"eğer","when":"ne zaman","then":"o zaman","so":"öyleyse",
+  "no":"hayır/yok","yes":"evet","only":"sadece","also":"ayrıca",
+  "already":"zaten","still":"hâlâ","again":"tekrar","never":"asla",
+  "always":"daima","often":"sıklıkla","soon":"yakında","now":"şimdi",
+  // Zamirler
+  "he":"o","she":"o","it":"o","they":"onlar","we":"biz","you":"sen/siz",
+  "i":"ben","his":"onun","her":"onun","its":"onun","their":"onların",
+  "our":"bizim","your":"senin/sizin","my":"benim","me":"beni","him":"ona",
+  "us":"bizi","them":"onları","who":"kim",
+  // Fiil çekimleri
+  "is":"dır/dir","are":"dırlar/dirler","was":"idi","were":"idiler",
+  "will":"ecek/acak","shall":"ecek/acak","would":"idi","could":"ebilirdi",
+  "should":"meli/malı","may":"ebilir","might":"ebilir","has":"sahip","have":"sahip",
+  "had":"vardı","be":"olmak","been":"olmuş","being":"olan",
+};
+
+function applyEnTr(txt) {
+  if (!txt) return txt;
+  const key = txt.toLowerCase().trim();
+  return EN_TR[key] || txt;
+}
+
 async function loadWby(chId) {
   if (wbyCache[chId]) return;
   try {
     let map = {}, pg = 1, tp = 1;
     do {
       const d = await apiFetch(
-        `${BASE_QC}/verses/by_chapter/${chId}?words=true&word_fields=text_uthmani,translation_text&per_page=50&page=${pg}`
+        `${BASE_QC}/verses/by_chapter/${chId}?words=true&word_fields=text_uthmani,translation_text&language=tr&word_translation_language=turkish&per_page=50&page=${pg}`
       );
       tp = d.pagination?.total_pages || 1;
-      (d.verses || []).forEach(v => { map[`${chId}:${v.verse_number}`] = v.words || []; });
+      (d.verses || []).forEach(v => {
+        const words = (v.words || []).map(w => {
+          if (w?.translation?.text) {
+            w.translation.text = applyEnTr(w.translation.text);
+          }
+          return w;
+        });
+        map[`${chId}:${v.verse_number}`] = words;
+      });
       pg++;
     } while (pg <= tp && pg <= 6);
     wbyCache[chId] = map;
@@ -635,11 +791,11 @@ function upgradeCards(chId) {
     const plain = card.querySelector('.vp'); if (!plain) return;
     const div = document.createElement('div'); div.className = 'wds';
     ws.filter(w => !isPunc(w)).forEach(w => {
-      const mn = w.translation?.text || w.transliteration?.text || '';
+      const mn = w?.translation?.text || '';
       const wt = w.text_uthmani || w.text || '';
       const el = document.createElement('div');
       el.className = 'wc'; el.dataset.wt = wt; el.dataset.mn = mn; el.title = mn;
-      el.innerHTML = `<span class="war">${esc(wt)}</span><span class="wmn">${esc(mn)}</span>`;
+      el.innerHTML = `<span class="war">${esc(cleanAr(wt))}</span><span class="wmn">${esc(mn)}</span>`;
       div.appendChild(el);
     });
     plain.replaceWith(div); attachL();
@@ -652,12 +808,12 @@ function renderV(v, vi, wby) {
   let arHtml;
   if (ws && ws.length) {
     arHtml = `<div class="wds">${ws.filter(w=>!isPunc(w)).map(w=>{
-      const mn=w.translation?.text||w.transliteration?.text||'';
+      const mn=w?.translation?.text||'';
       const wt=w.text_uthmani||w.text||'';
-      return `<div class="wc" data-wt="${esc(wt)}" data-mn="${esc(mn)}" title="${esc(mn)}"><span class="war">${esc(wt)}</span><span class="wmn">${esc(mn)}</span></div>`;
+      return `<div class="wc" data-wt="${esc(wt)}" data-mn="${esc(mn)}" title="${esc(mn)}"><span class="war">${esc(cleanAr(wt))}</span><span class="wmn">${esc(mn)}</span></div>`;
     }).join('')}</div>`;
   } else {
-    arHtml = `<span class="vp">${esc(v.ar)}</span>`;
+    arHtml = `<span class="vp">${esc(cleanAr(v.ar))}</span>`;
   }
   const trClean = dh(v.tr.replace(/<[^>]+>/g,''));
   const trHtml  = trClean ? `<div class="vt"><div class="vtl">Türkçe Meal (Diyanet) <span style="color:#3a6a48;font-size:8px">— kelimeye tıkla</span></div><div class="mt">${wrapMW(trClean)}</div></div>` : '';
@@ -706,7 +862,7 @@ async function onArClick(wtext, wmn) {
   if (!hintOff) { hintOff=true; $('hint').classList.add('hidden'); try{localStorage.setItem('kuran_hint_seen','1');}catch(e){} }
   $('sbAr').classList.remove('hidden'); $('sbTr').classList.add('hidden');
   openSb();
-  $('sbWord').textContent=wtext; $('sbMn').textContent=wmn; $('sbCt').textContent='';
+  $('sbWord').textContent=cleanAr(wtext); $('sbMn').textContent=wmn; $('sbCt').textContent='';
   $('occSp').classList.remove('hidden'); $('occEmpty').classList.add('hidden');
   $('occList').innerHTML='';
   occSt={wtext,pg:0,totPg:1,loading:false};
@@ -768,8 +924,8 @@ function buildOcc(occ,wtext,con) {
   card.appendChild(ref);
   const ar=document.createElement('div'); ar.className='oar';
   const ow=(occ.words||[]).filter(w=>!isPunc(w));
-  if (ow.length) { ow.forEach(w=>{const wt=w.text_uthmani||w.text||'';const s=document.createElement('span');s.className='oaw'+(isMatch(wt,wtext)?' hit':'');s.textContent=wt;ar.appendChild(s);}); }
-  else { const s=document.createElement('span');s.className='oaw';s.textContent=occ.text||'';ar.appendChild(s); }
+  if (ow.length) { ow.forEach(w=>{const wt=w.text_uthmani||w.text||'';const s=document.createElement('span');s.className='oaw'+(isMatch(wt,wtext)?' hit':'');s.textContent=cleanAr(wt);ar.appendChild(s);}); }
+  else { const s=document.createElement('span');s.className='oaw';s.textContent=cleanAr(occ.text||'');ar.appendChild(s); }
   card.appendChild(ar);
   const tb=document.createElement('div'); tb.className='otr';
   tb.innerHTML=`<div class="otr-l">Türkçe Meal</div><div class="otr-t otr-ld">Yükleniyor…</div>`;
@@ -791,7 +947,7 @@ function renderBas(wtext) {
     ref.addEventListener('click',()=>navTo(ch.id+':1')); card.appendChild(ref);
     const ar=document.createElement('div'); ar.className='oar';
     ['بِسْمِ','ٱللَّهِ','ٱلرَّحْمَٰنِ','ٱلرَّحِيمِ'].forEach(w=>{
-      const s=document.createElement('span');s.className='oaw'+(isMatch(w,wtext)?' hit':'');s.textContent=w;ar.appendChild(s);
+      const s=document.createElement('span');s.className='oaw'+(isMatch(w,wtext)?' hit':'');s.textContent=cleanAr(w);ar.appendChild(s);
     }); card.appendChild(ar);
     const tb=document.createElement('div'); tb.className='otr';
     tb.innerHTML=`<div class="otr-l">Sure</div><div class="otr-t">${esc(ch.tr)} · ${ch.v} Ayet · ${ch.p==='makkah'?'Mekki':'Medeni'}</div>`;
@@ -827,7 +983,7 @@ async function onTrClick(raw) {
       const tb=document.createElement('div'); tb.className='otr';
       tb.innerHTML=`<div class="otr-l">Türkçe Meal</div><div class="otr-t">${hlStem(dh((m.text||'').replace(/<[^>]+>/g,'')),stem)}</div>`;
       card.appendChild(tb); con.appendChild(card);
-      try{const vd=await apiFetch(`${BASE}/ayah/${vk}/quran-uthmani`);ar.textContent=vd.data?.text||'—';}catch(e){ar.textContent='—';}
+      try{const vd=await apiFetch(`${BASE}/ayah/${vk}/quran-uthmani`);ar.textContent=cleanAr(vd.data?.text||'—');}catch(e){ar.textContent='—';}
     }));
   } catch(e) { $('occSp').classList.add('hidden'); $('occEmpty').classList.remove('hidden'); }
 }
@@ -1087,7 +1243,7 @@ async function runArSearch(q, fresh) {
         arDiv.appendChild(span);
       });
     } else {
-      arDiv.textContent = occ.text || '';
+      arDiv.textContent = cleanAr(occ.text || '');
     }
     frag.appendChild(card);
     const ex = dh((occ.translations?.[0]?.text||'').replace(/<[^>]+>/g,''));
@@ -1141,7 +1297,7 @@ async function runTrSearch(q, fresh) {
   await Promise.all(pending.map(async ({arDiv, vk}) => {
     try {
       const vd = await apiFetch(`${BASE}/ayah/${vk}/quran-uthmani`);
-      arDiv.textContent = vd.data?.text || '—';
+      arDiv.textContent = cleanAr(vd.data?.text || '—');
     } catch(e) { arDiv.textContent = '—'; }
   }));
 
@@ -1514,7 +1670,7 @@ async function runRootSearch() {
           arDiv.appendChild(span);
         });
       } else {
-        arDiv.textContent = occ.text || '';
+        arDiv.textContent = cleanAr(occ.text || '');
       }
       frag.appendChild(card);
       const ex = dh((occ.translations?.[0]?.text||'').replace(/<[^>]+>/g,''));
@@ -1558,6 +1714,169 @@ function showToast(msg) {
   toastTimer = setTimeout(() => { t.style.opacity='0'; t.style.transform='translateX(-50%) translateY(20px)'; }, 2000);
 }
 
+/* ══ MUSHAF VIEW ═════════════════════════════════════════════ */
+let mushafMode = false;
+let mushafPg   = 1;
+let mushafLoading = false;
+
+$('mushafBtn').addEventListener('click', openMushaf);
+$('mushafClose').addEventListener('click', closeMushaf);
+
+// Font size for mushaf
+let mFontSize = 28;
+function applyMFont() {
+  document.documentElement.style.setProperty('--mfont', mFontSize + 'px');
+  try { localStorage.setItem('kuran_mfont', mFontSize); } catch(e) {}
+}
+(function() {
+  try { const s = +localStorage.getItem('kuran_mfont'); if (s >= 16 && s <= 48) mFontSize = s; } catch(e) {}
+  applyMFont();
+})();
+$('mFontDec').addEventListener('click', () => { if (mFontSize > 16) { mFontSize -= 2; applyMFont(); } });
+$('mFontInc').addEventListener('click', () => { if (mFontSize < 48) { mFontSize += 2; applyMFont(); } });
+
+function openMushaf() {
+  mushafMode = true;
+  $('mushafBtn').classList.add('active');
+  $('mushafView').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  pauseInfiniteScroll();
+  // Son kalınan sayfayı localStorage'dan oku
+  try { const s = +localStorage.getItem('kuran_mushaf_pg'); if (s >= 1 && s <= 604) mushafPg = s; } catch(e) {}
+  loadMushafPage(mushafPg);
+}
+
+function closeMushaf() {
+  mushafMode = false;
+  $('mushafBtn').classList.remove('active');
+  $('mushafView').classList.remove('active');
+  document.body.style.overflow = '';
+  resumeInfiniteScroll();
+}
+
+function toggleMushafMode() { mushafMode ? closeMushaf() : openMushaf(); }
+
+async function loadMushafPage(pg) {
+  if (mushafLoading) return;
+  mushafLoading = true;
+  mushafPg = Math.max(1, Math.min(604, pg));
+  $('mPgInput').value = mushafPg;
+  $('mPrev').disabled = mushafPg <= 1;
+  $('mNext').disabled = mushafPg >= 604;
+  try { localStorage.setItem('kuran_mushaf_pg', mushafPg); } catch(e) {}
+
+  $('mushafPage').innerHTML = `<div class="mushaf-spinner">Sayfa yükleniyor…</div>`;
+
+  try {
+    // alquran.cloud page endpoint — tek edition ile çalışır
+    const d = await apiFetch(`${BASE}/page/${mushafPg}/quran-uthmani`);
+    const arAyahs = d.data?.ayahs || [];
+    renderMushafPage(arAyahs, {});
+  } catch(e) {
+    $('mushafPage').innerHTML = '<div class="mushaf-spinner">Yüklenemedi. İnternet bağlantınızı kontrol edin.</div>';
+    console.error('mushaf load error', e);
+  }
+  mushafLoading = false;
+}
+
+function renderMushafPage(ayahs, trAyahs) {
+  if (!ayahs || !ayahs.length) {
+    $('mushafPage').innerHTML = '<div class="mushaf-spinner">Bu sayfada ayet bulunamadi.</div>';
+    return;
+  }
+
+  // alquran.cloud format: ayah.surah.number, ayah.numberInSurah, ayah.text
+  const first = ayahs[0];
+  const chId0 = first.surah && first.surah.number ? first.surah.number : +first.surah;
+  const ch0   = CHS.find(x => x.id === chId0);
+  $('mPageInfo').textContent  = 'Sayfa ' + mushafPg;
+  $('mSurahInfo').textContent = ch0 ? ch0.ar : '';
+
+  const verseTextDiv = document.createElement('div');
+  verseTextDiv.className = 'mushaf-verses';
+  let lastSurah = -1;
+
+  ayahs.forEach(function(ayah) {
+    var chId = ayah.surah && ayah.surah.number ? ayah.surah.number : +ayah.surah;
+    var vNum = ayah.numberInSurah;
+    var vk   = chId + ':' + vNum;
+    var ch   = CHS.find(function(x) { return x.id === chId; });
+    var arText = ayah.text || '';
+
+    // Sure basligi
+    if (chId !== lastSurah) {
+      lastSurah = chId;
+      if (ch) {
+        var hdr = document.createElement('div');
+        hdr.className = 'mushaf-surah-header';
+        var nm = document.createElement('span');
+        nm.className = 'mushaf-surah-name';
+        nm.textContent = ch.ar;
+        var mt = document.createElement('span');
+        mt.className = 'mushaf-surah-meta';
+        mt.textContent = ch.tr + ' · ' + ch.v + ' Ayet';
+        hdr.appendChild(nm);
+        hdr.appendChild(mt);
+        verseTextDiv.appendChild(hdr);
+      }
+      // Besmele
+      if (chId !== 9 && !(chId === 1 && vNum === 1)) {
+        var bas = document.createElement('div');
+        bas.className   = 'mushaf-basmala';
+        bas.textContent = '\u0628\u0650\u0633\u0652\u0645\u0650 \u0671\u0644\u0644\u0651\u064e\u0647\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0652\u0645\u064e\u0670\u0646\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0650\u064a\u0645\u0650';
+        verseTextDiv.appendChild(bas);
+      }
+    }
+
+    // Her kelimeyi ayri span yap
+    var words = arText.split(' ');
+    for (var wi = 0; wi < words.length; wi++) {
+      var wt = words[wi];
+      if (!wt) continue;
+      var span = document.createElement('span');
+      span.className = 'mushaf-word';
+      span.textContent = wt;
+      span.dataset.wt = wt;
+      span.dataset.mn = '';
+      (function(s, word) {
+        s.addEventListener('click', function() {
+          document.querySelectorAll('.mushaf-word.msel').forEach(function(e) { e.classList.remove('msel'); });
+          s.classList.add('msel');
+          statsTrack(word, '');
+          onArClick(word, '');
+        });
+      })(span, wt);
+      verseTextDiv.appendChild(span);
+      verseTextDiv.appendChild(document.createTextNode(' '));
+    }
+
+    // Ayet sonu numarasi
+    var endMark = document.createElement('span');
+    endMark.className   = 'mushaf-end';
+    endMark.textContent = toArabicNum(vNum);
+    endMark.title       = vk;
+    verseTextDiv.appendChild(endMark);
+    verseTextDiv.appendChild(document.createTextNode(' '));
+  });
+
+  $('mushafPage').innerHTML = '';
+  $('mushafPage').appendChild(verseTextDiv);
+  $('mushafContent').scrollTop = 0;
+}
+
+function toArabicNum(n) {
+  const ar = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+  return String(n).split('').map(d => ar[+d] || d).join('');
+}
+
+// Mushaf navigation
+$('mPrev').addEventListener('click', () => { if (mushafPg > 1)   loadMushafPage(mushafPg - 1); });
+$('mNext').addEventListener('click', () => { if (mushafPg < 604) loadMushafPage(mushafPg + 1); });
+$('mPgInput').addEventListener('change', e => {
+  const v = +e.target.value;
+  if (v >= 1 && v <= 604) loadMushafPage(v);
+});
+
 /* ══ SWIPE NAVIGATION ════════════════════════════════════════ */
 (function initSwipe() {
   let startX = 0, startY = 0;
@@ -1566,6 +1885,15 @@ function showToast(msg) {
   const LOCK_PX   = 10; // px before we decide direction
 
   function goPage(dir) {
+    if (mushafMode) {
+      // Mushaf modunda: sayfa geçişi
+      const next = mushafPg + dir;
+      if (next >= 1 && next <= 604) {
+        loadMushafPage(next);
+        showToast(dir > 0 ? `Sayfa ${next} →` : `← Sayfa ${next}`);
+      }
+      return;
+    }
     const totPg = Math.ceil(verses.length / PER);
     const next  = curPg + dir;
     if (next < 1 || next > totPg) return;
@@ -1648,6 +1976,24 @@ function dh(s){const t=document.createElement('textarea');t.innerHTML=String(s||
 const _PF={'\uFE70':'\u064B','\uFE71':'\u064B','\uFE72':'\u064C','\uFE74':'\u064D','\uFE76':'\u064E','\uFE77':'\u064E','\uFE78':'\u064F','\uFE79':'\u064F','\uFE7A':'\u0650','\uFE7B':'\u0650','\uFE7C':'\u0651','\uFE7D':'\u0651','\uFE7E':'\u0652','\uFE7F':'\u0652','\uFE80':'\u0621','\uFE81':'\u0627','\uFE82':'\u0627','\uFE83':'\u0627','\uFE84':'\u0627','\uFE85':'\u0648','\uFE86':'\u0648','\uFE87':'\u0627','\uFE88':'\u0627','\uFE89':'\u064A','\uFE8A':'\u064A','\uFE8B':'\u064A','\uFE8C':'\u064A','\uFE8D':'\u0627','\uFE8E':'\u0627','\uFE8F':'\u0628','\uFE90':'\u0628','\uFE91':'\u0628','\uFE92':'\u0628','\uFE93':'\u0647','\uFE94':'\u0647','\uFE95':'\u062A','\uFE96':'\u062A','\uFE97':'\u062A','\uFE98':'\u062A','\uFE99':'\u062B','\uFE9A':'\u062B','\uFE9B':'\u062B','\uFE9C':'\u062B','\uFE9D':'\u062C','\uFE9E':'\u062C','\uFE9F':'\u062C','\uFEA0':'\u062C','\uFEA1':'\u062D','\uFEA2':'\u062D','\uFEA3':'\u062D','\uFEA4':'\u062D','\uFEA5':'\u062E','\uFEA6':'\u062E','\uFEA7':'\u062E','\uFEA8':'\u062E','\uFEA9':'\u062F','\uFEAA':'\u062F','\uFEAB':'\u0630','\uFEAC':'\u0630','\uFEAD':'\u0631','\uFEAE':'\u0631','\uFEAF':'\u0632','\uFEB0':'\u0632','\uFEB1':'\u0633','\uFEB2':'\u0633','\uFEB3':'\u0633','\uFEB4':'\u0633','\uFEB5':'\u0634','\uFEB6':'\u0634','\uFEB7':'\u0634','\uFEB8':'\u0634','\uFEB9':'\u0635','\uFEBA':'\u0635','\uFEBB':'\u0635','\uFEBC':'\u0635','\uFEBD':'\u0636','\uFEBE':'\u0636','\uFEBF':'\u0636','\uFEC0':'\u0636','\uFEC1':'\u0637','\uFEC2':'\u0637','\uFEC3':'\u0637','\uFEC4':'\u0637','\uFEC5':'\u0638','\uFEC6':'\u0638','\uFEC7':'\u0638','\uFEC8':'\u0638','\uFEC9':'\u0639','\uFECA':'\u0639','\uFECB':'\u0639','\uFECC':'\u0639','\uFECD':'\u063A','\uFECE':'\u063A','\uFECF':'\u063A','\uFED0':'\u063A','\uFED1':'\u0641','\uFED2':'\u0641','\uFED3':'\u0641','\uFED4':'\u0641','\uFED5':'\u0642','\uFED6':'\u0642','\uFED7':'\u0642','\uFED8':'\u0642','\uFED9':'\u0643','\uFEDA':'\u0643','\uFEDB':'\u0643','\uFEDC':'\u0643','\uFEDD':'\u0644','\uFEDE':'\u0644','\uFEDF':'\u0644','\uFEE0':'\u0644','\uFEE1':'\u0645','\uFEE2':'\u0645','\uFEE3':'\u0645','\uFEE4':'\u0645','\uFEE5':'\u0646','\uFEE6':'\u0646','\uFEE7':'\u0646','\uFEE8':'\u0646','\uFEE9':'\u0647','\uFEEA':'\u0647','\uFEEB':'\u0647','\uFEEC':'\u0647','\uFEED':'\u0648','\uFEEE':'\u0648','\uFEEF':'\u064A','\uFEF0':'\u064A','\uFEF1':'\u064A','\uFEF2':'\u064A','\uFEF3':'\u064A','\uFEF4':'\u064A','\uFEF5':'\u0644\u0627','\uFEF6':'\u0644\u0627','\uFEF7':'\u0644\u0627','\uFEF8':'\u0644\u0627','\uFEF9':'\u0644\u0627','\uFEFA':'\u0644\u0627','\uFEFB':'\u0644\u0627','\uFEFC':'\u0644\u0627'};
 const _PF_RE=/[\uFE70-\uFEFC]/g;
 function norm(s){return String(s).replace(_PF_RE,c=>_PF[c]||c).replace(/[\u064B-\u065F]/g,'').replace(/\u0670/g,'').replace(/[\u0610-\u061A\u06D6-\u06DC\u06DF-\u06E4\u06E7\u06E8\u06EA-\u06ED]/g,'').replace(/\u0640/g,'').replace(/[\u0622\u0623\u0625\u0671]/g,'\u0627').replace(/\u0624/g,'\u0648').replace(/\u0626/g,'\u064A').replace(/\u0649/g,'\u064A').replace(/\u0629/g,'\u0647').trim();}
+
+// Görüntüleme için: font tarafından desteklenmeyen Kurani işaretleri sil
+function cleanAr(s){
+  return String(s||'')
+    .replace(/[\u0600-\u0605\u0608\u060B\u060D]/g,'')  // Arapça özel işaretler
+    .replace(/[\u0610-\u061A]/g,'')   // Kurani süsleme
+    .replace(/[\u06D6-\u06DD]/g,'')   // Kurani durak/secde/hizb işaretleri
+    .replace(/[\u06DF-\u06E4]/g,'')   // Kurani küçük harfler
+    .replace(/[\u06E7\u06E8]/g,'')    // Rafe işareti
+    .replace(/[\u06EA-\u06ED]/g,'')   // Kurani işaretler
+    .replace(/[\u0615\u0670]/g,'')    // Süper elif
+    .replace(/[\u06DE\u06E5\u06E6]/g,'') // Yıldız, vav, ye işaretleri
+    .replace(/\uFDFD/g,'')            // Besmele sembolü (özel)
+    .replace(/[\uFDD0-\uFDEF]/g,'')   // Non-characters
+    .replace(/[\u200B-\u200F]/g,'')   // Sıfır genişlikli karakterler
+    .replace(/[\u202A-\u202E]/g,'')   // Yön işaretleri
+    .trim();
+}
 function stripPre(w){for(const p of['\u0648\u0627\u0644','\u0641\u0627\u0644','\u0628\u0627\u0644','\u0643\u0627\u0644','\u0644\u0644','\u0627\u0644','\u0648','\u0641','\u0628','\u0644','\u0643'])if(w.startsWith(p)&&w.length-p.length>=2)return w.slice(p.length);return w;}
 function stripSuf(w){for(const s of['\u0647\u0645','\u0647\u0646','\u0643\u0645','\u0646\u0627','\u0647\u0627','\u0647','\u0643','\u0646','\u064A','\u0627'])if(w.endsWith(s)&&w.length-s.length>=2)return w.slice(0,w.length-s.length);return w;}
 function isMatch(a,b){const na=norm(a),nb=norm(b);if(!na||!nb)return false;if(na===nb)return true;const as=stripPre(na),bs=stripPre(nb);if(as===bs||as===nb||na===bs)return true;const ass=stripSuf(as),bss=stripSuf(bs);if(ass===bss&&ass.length>=2)return true;if(ass===bs||as===bss)return true;if(nb.length>=3&&(as.includes(nb)||as.includes(bs)))return true;if(bs.length>=3&&na.includes(bs))return true;return false;}
